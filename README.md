@@ -1,5 +1,5 @@
 # cub3d
-cub3D is a minimalist recreation of the classic first-person shooter game, Wolfenstein 3D, leveraging the power of raycasting techniques to generate a pseudo-3D gaming environment.
+cub3D is a minimalist implementation of the first-person shooter game Wolfenstein 3D, leveraging the power of raycasting techniques to generate a pseudo-3D gaming environment.
 
 
 This project was inspired by the original game's groundbreaking usage of raycasting technology, which transformed the gaming landscape by creating an immersive first-person 3D experience on the 2D screens of the time.
