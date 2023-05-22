@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sel-maar <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vmourtia <vmourtia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 11:49:52 by sel-maar          #+#    #+#             */
-/*   Updated: 2023/05/22 15:29:58 by sel-maar         ###   ########.fr       */
+/*   Updated: 2023/05/22 17:30:47 by vmourtia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,9 @@
 
 int	main(int ac, char **av)
 {
-	if (ac != 3)
+	if (ac != 2)
 		return (0);
 	if (is_cub_file(av[1]) == false)
 		return (0);
-	printf("Cub3D !\n");
 	return (0);
 }
