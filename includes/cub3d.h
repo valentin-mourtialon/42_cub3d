@@ -6,7 +6,7 @@
 /*   By: vmourtia <vmourtia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 12:13:08 by sel-maar          #+#    #+#             */
-/*   Updated: 2023/05/23 12:16:32 by vmourtia         ###   ########.fr       */
+/*   Updated: 2023/05/23 15:52:09 by vmourtia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,13 @@
 # include <stdlib.h>
 # include <math.h>
 # include <unistd.h>
+
+
+/****************************************************/
+/*					   DEFINES  					*/
+/****************************************************/
+
+# define EXTENSION ".cub"
 
 /****************************************************/
 /*					  STRUCTURES					*/
@@ -47,11 +54,12 @@ typedef struct s_data_map {
 
 size_t	ft_strlen(char *str);
 int		ft_strcmp(char *s1, char *s2);
+void	ft_putstr_fd(char *str, int fd);
 
 /****************************************************/
 /*						PARSER						*/
 /****************************************************/
 
-t_bool	check_extension(char *file, char *extension);
+int	check_args(int ac, char **av);
 
 #endif

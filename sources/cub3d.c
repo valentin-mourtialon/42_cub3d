@@ -6,7 +6,7 @@
 /*   By: vmourtia <vmourtia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 11:49:52 by sel-maar          #+#    #+#             */
-/*   Updated: 2023/05/23 12:05:07 by vmourtia         ###   ########.fr       */
+/*   Updated: 2023/05/23 15:41:32 by vmourtia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
 
 int	main(int ac, char **av)
 {
-	if (ac != 2)
-		return (0);
-	if (check_extension(av[1], ".cub") == false)
-		return (0);
+	if (check_args(ac, av) == 0)
+		return (1);
 	return (0);
 }

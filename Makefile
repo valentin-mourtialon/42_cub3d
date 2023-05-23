@@ -6,7 +6,7 @@
 #    By: vmourtia <vmourtia@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/22 12:40:08 by sel-maar          #+#    #+#              #
-#    Updated: 2023/05/23 12:23:51 by vmourtia         ###   ########.fr        #
+#    Updated: 2023/05/23 15:38:57 by vmourtia         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ CC =			cc
 CFLAGS =		-Wall -Werror -Wextra 
 
 SRCS_FILES =	cub3d.c \
-				parser/check_file.c \
+				parser/check_args.c \
 				libft/ft_strlen.c \
 				libft/ft_strcmp.c \
 				libft/ft_putstr_fd.c
