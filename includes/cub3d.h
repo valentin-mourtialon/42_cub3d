@@ -3,21 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sel-maar <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vmourtia <vmourtia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 12:13:08 by sel-maar          #+#    #+#             */
-/*   Updated: 2023/05/22 15:36:43 by sel-maar         ###   ########.fr       */
+/*   Updated: 2023/05/23 12:16:32 by vmourtia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CUB3D_H
 # define CUB3D_H
 
-# include "../mlx_Linux/mlx.h"
+/****************************************************/
+/*					   INCLUDES  					*/
+/****************************************************/
+
+# include "../lib/mlx_Linux/mlx.h"
 # include <stdio.h>
 # include <stdlib.h>
 # include <math.h>
 # include <unistd.h>
+
+/****************************************************/
+/*					  STRUCTURES					*/
+/****************************************************/
 
 typedef enum e_bool {
 	false,
@@ -33,8 +41,17 @@ typedef struct s_data_map {
 	int		colors[3];
 }	t_data_map;
 
+/****************************************************/
+/*						LIBFT						*/
+/****************************************************/
+
 size_t	ft_strlen(char *str);
-int		ft_strncmp(char *s1, char *s2, size_t n);
-t_bool	is_cub_file(char *file);
+int		ft_strcmp(char *s1, char *s2);
+
+/****************************************************/
+/*						PARSER						*/
+/****************************************************/
+
+t_bool	check_extension(char *file, char *extension);
 
 #endif

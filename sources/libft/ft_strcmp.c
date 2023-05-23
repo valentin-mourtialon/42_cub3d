@@ -3,25 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sel-maar <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vmourtia <vmourtia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 12:50:38 by sel-maar          #+#    #+#             */
-/*   Updated: 2023/05/22 15:35:29 by sel-maar         ###   ########.fr       */
+/*   Updated: 2023/05/23 12:08:49 by vmourtia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <cub3d.h>
 
-int	ft_strncmp(char *s1, char *s2, size_t n)
+int	ft_strcmp(char *s1, char *s2)
 {
 	size_t	i;
 
 	i = 0;
-	while (i < n && (s1[i] || s2[i]))
+	while (s1[i] == s2[i])
 	{
-		if (s1[i] != s2[i])
-			return (s1[i] - s2[i]);
+		if (s1[i] == '\0')
+			return (0);
 		i++;
 	}
-	return (0);
+	return (s1[i] - s2[i]);
 }
