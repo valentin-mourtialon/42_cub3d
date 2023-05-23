@@ -1,4 +1,6 @@
 # cub3d
+This project is part of the 42 school curriculum.
+
 cub3D is a minimalist implementation of the first-person shooter game Wolfenstein 3D, leveraging the power of raycasting techniques to generate a pseudo-3D gaming environment.
 
 
