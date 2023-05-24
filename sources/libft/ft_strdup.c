@@ -6,7 +6,7 @@
 /*   By: vmourtia <vmourtia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 11:13:08 by vmourtia          #+#    #+#             */
-/*   Updated: 2023/05/24 11:18:07 by vmourtia         ###   ########.fr       */
+/*   Updated: 2023/05/24 14:40:16 by vmourtia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,6 @@ char	*ft_strdup(char *str)
 		copy[i] = str[i];
 		i++;
 	}
+	copy[i] = '\0';
 	return (copy);
 }
