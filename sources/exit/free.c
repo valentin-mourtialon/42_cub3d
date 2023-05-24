@@ -1,18 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   free.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sel-maar <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vmourtia <vmourtia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/22 14:55:35 by sel-maar          #+#    #+#             */
-/*   Updated: 2023/05/22 15:36:05 by sel-maar         ###   ########.fr       */
+/*   Created: 2023/05/24 11:10:13 by vmourtia          #+#    #+#             */
+/*   Updated: 2023/05/24 11:12:34 by vmourtia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <cub3d.h>
 
-void	ft_putstr_fd(char *str, int	fd)
+void	free_ptr(void *ptr)
 {
-	write(fd, str, ft_strlen(str));
+	if (ptr == NULL)
+		return ;
+	free(ptr);
+	ptr = NULL;
 }
