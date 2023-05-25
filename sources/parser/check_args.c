@@ -6,7 +6,7 @@
 /*   By: vmourtia <vmourtia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 11:50:41 by sel-maar          #+#    #+#             */
-/*   Updated: 2023/05/24 13:32:09 by vmourtia         ###   ########.fr       */
+/*   Updated: 2023/05/24 14:44:25 by sel-maar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static t_bool	is_valid_char(char c)
 	invalid_set = "/:?<>|*^ ";
 	while (*invalid_set)
 	{
-		if (c == *invalid_set || c == '\0')
+		if (c == *invalid_set)
 			return (false);
 		invalid_set++;
 	}
