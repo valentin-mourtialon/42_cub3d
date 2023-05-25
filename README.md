@@ -12,8 +12,13 @@ cub3D seeks to take a deep dive into these foundational graphics rendering techn
 
 Please note that this project is purely educational and is not intended for commercial use.
 
+Authors:
+- vmourtia: Valentin Mourtialon
+- sel-maar: Sami El-Maaroufi
+
 ## Features
 - 3D rendering using raycasting techniques
+- Simple pathfinding algorithm for validating the input map
 - Simple, intuitive controls for player movement
 - Customizable maps and textures
 - Collision detection
