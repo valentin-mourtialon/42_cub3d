@@ -6,11 +6,11 @@
 /*   By: vmourtia <vmourtia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 12:53:08 by vmourtia          #+#    #+#             */
-/*   Updated: 2023/05/24 13:24:32 by vmourtia         ###   ########.fr       */
+/*   Updated: 2023/05/31 18:12:30 by vmourtia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <cub3d.h>
+#include <libft.h>
 
 char	*ft_strjoin(char *s1, char *s2)
 {

@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vmourtia <vmourtia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/22 12:50:38 by sel-maar          #+#    #+#             */
-/*   Updated: 2023/05/23 12:08:49 by vmourtia         ###   ########.fr       */
+/*   Created: 2023/05/31 18:13:32 by vmourtia          #+#    #+#             */
+/*   Updated: 2023/05/31 18:17:06 by vmourtia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <cub3d.h>
+#ifndef LIBFT_H
+# define LIBFT_H
 
-int	ft_strcmp(char *s1, char *s2)
-{
-	size_t	i;
+# include <unistd.h>
+# include <stdlib.h>
 
-	i = 0;
-	while (s1[i] == s2[i])
-	{
-		if (s1[i] == '\0')
-			return (0);
-		i++;
-	}
-	return (s1[i] - s2[i]);
-}
+int		ft_strlen(char *s);
+char	*ft_strjoin(char *s1, char *s2);
+char	*ft_strdup(char *str);
+int		ft_strcmp(char *s1, char *s2);
+void	ft_putendl_fd(char *str, int fd);
+
+#endif

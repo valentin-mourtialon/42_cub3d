@@ -6,7 +6,7 @@
 #    By: vmourtia <vmourtia@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/22 12:40:08 by sel-maar          #+#    #+#              #
-#    Updated: 2023/05/31 17:50:50 by vmourtia         ###   ########.fr        #
+#    Updated: 2023/05/31 18:52:42 by vmourtia         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ CC =			cc
 
 CFLAGS =		-Wall -Werror -Wextra -g3
 
-INCLUDES = 		-I/usr/include -I./includes -I./lib/mlx_Linux 
+INCLUDES = 		-I/usr/include -I./includes -I./lib/mlx_Linux -I./lib/std_libft/includes
 
 ################################################################################
 #                                                                              #
@@ -34,22 +34,17 @@ SRCS_FILES =	cub3d.c \
 				parser/check_args.c \
 				utils/update_join.c \
 				exit/free.c \
-				error/error_msg.c \
-				libft/ft_strlen.c \
-				libft/ft_strcmp.c \
-				libft/ft_strjoin.c \
-				libft/ft_putendl_fd.c \
-				libft/ft_strdup.c
+				error/error_msg.c
 
 SRCS_PATH =		sources/
 
 OBJS_PATH =		objects/
 
-OBJS_FILES =	$(SRCS:.c=.o)
+OBJS_FILES =	${SRCS:.c=.o}
 
-OBJS =			$(addprefix $(OBJS_PATH), $(OBJS_FILES))
+OBJS =			${addprefix ${OBJS_PATH}, ${OBJS_FILES}}
 
-SRCS = 			$(addprefix $(SRCS_PATH), $(SRCS_FILES))
+SRCS = 			${addprefix ${SRCS_PATH}, ${SRCS_FILES}}
 
 ################################################################################
 #                                                                              #
@@ -58,6 +53,7 @@ SRCS = 			$(addprefix $(SRCS_PATH), $(SRCS_FILES))
 ################################################################################
 
 MLX =			-L./lib/mlx_Linux -L/usr/lib -lmlx_Linux -lXext -lX11 -lm -lz 
+LIBFT =			-L./lib/std_libft -lstd_libft
 
 ################################################################################
 #                                                                              #
@@ -73,7 +69,8 @@ ${NAME}: ${OBJS}
 				@mkdir -p logs
 				@echo "${LIGHT_CYAN}${BOLD}cub3D	${RESET}[${LIGHT_GREEN}info${RESET}] : Logs directory successfully created\n"
 				@${MAKE} -s -C ./lib/mlx_Linux 2> logs/make_mlx_logs.txt 
-				@${CC} ${CFLAGS} ${OBJS} ${MLX} -o ${NAME}
+				@${MAKE} -s -C ./lib/std_libft 2> logs/make_libft_logs.txt 
+				@${CC} ${CFLAGS} ${OBJS} ${MLX} ${LIBFT} -o ${NAME}
 				@echo "${LIGHT_CYAN}${BOLD}cub3D	${RESET}${BLUE}${BOLD}${ITALIC}🔥 Ready to fire ! 🔥${RESET}\n\n"
 
 $(OBJS_PATH)%.o: %.c
@@ -82,14 +79,15 @@ $(OBJS_PATH)%.o: %.c
 
 clean:
 				@$(MAKE) clean -s -C ./lib/mlx_Linux
+				@$(MAKE) clean -s -C ./lib/std_libft
 				@$(RM) $(OBJS_PATH) logs
 
 fclean: clean
 				@$(RM) $(NAME)
 
 re: 
-				$(MAKE) fclean
-				$(MAKE) all
+				@$(MAKE) fclean -s
+				@$(MAKE) all -s
 
 .phony: all clean fclean re
 

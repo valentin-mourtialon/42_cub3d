@@ -6,7 +6,7 @@
 /*   By: vmourtia <vmourtia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 12:13:08 by sel-maar          #+#    #+#             */
-/*   Updated: 2023/05/24 13:05:46 by vmourtia         ###   ########.fr       */
+/*   Updated: 2023/05/31 18:57:13 by vmourtia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@
 /*					   INCLUDES  					*/
 /****************************************************/
 
-# include "../lib/mlx_Linux/mlx.h"
+# include <mlx.h>
+# include <libft.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <math.h>
@@ -51,16 +52,6 @@ typedef struct s_data_map {
 	int		floor[3];
 	int		colors[3];
 }	t_data_map;
-
-/****************************************************/
-/*						LIBFT						*/
-/****************************************************/
-
-size_t	ft_strlen(char *str);
-int		ft_strcmp(char *s1, char *s2);
-void	ft_putendl_fd(char *str, int fd);
-char	*ft_strdup(char *str);
-char	*ft_strjoin(char *s1, char *s2);
 
 /****************************************************/
 /*						PARSER						*/

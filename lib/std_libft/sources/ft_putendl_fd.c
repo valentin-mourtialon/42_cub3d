@@ -1,33 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vmourtia <vmourtia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/24 11:13:08 by vmourtia          #+#    #+#             */
-/*   Updated: 2023/05/24 14:40:16 by vmourtia         ###   ########.fr       */
+/*   Created: 2023/05/22 11:50:41 by sel-maar          #+#    #+#             */
+/*   Updated: 2023/05/31 18:12:16 by vmourtia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <cub3d.h>
+#include <libft.h>
 
-char	*ft_strdup(char *str)
+void	ft_putendl_fd(char *str, int fd)
 {
-	char	*copy;
-	int		i;
-
 	if (str == NULL)
-		return (NULL);
-	copy = malloc(sizeof(*copy) * (ft_strlen(str) + 1));
-	if (copy == NULL)
-		return (NULL);
-	i = 0;
-	while (str[i])
 	{
-		copy[i] = str[i];
-		i++;
+		write(fd, "\n", 1);
+		return ;
 	}
-	copy[i] = '\0';
-	return (copy);
+	write(fd, str, ft_strlen(str));
+	write(fd, "\n", 1);
 }
