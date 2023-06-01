@@ -6,7 +6,7 @@
 #    By: vmourtia <vmourtia@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/22 12:40:08 by sel-maar          #+#    #+#              #
-#    Updated: 2023/05/31 18:52:42 by vmourtia         ###   ########.fr        #
+#    Updated: 2023/06/01 13:40:13 by vmourtia         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,13 +63,7 @@ LIBFT =			-L./lib/std_libft -lstd_libft
 
 all: title $(NAME) 
 
-${NAME}: ${OBJS}
-				@echo "${LIGHT_CYAN}${BOLD}cub3D	${RESET}[${LIGHT_GREEN}info${RESET}] : Objects directory successfully created"
-				@echo "${LIGHT_CYAN}${BOLD}cub3D	${RESET}[${LIGHT_GREEN}info${RESET}] : C-files successfully converted to objects-files"
-				@mkdir -p logs
-				@echo "${LIGHT_CYAN}${BOLD}cub3D	${RESET}[${LIGHT_GREEN}info${RESET}] : Logs directory successfully created\n"
-				@${MAKE} -s -C ./lib/mlx_Linux 2> logs/make_mlx_logs.txt 
-				@${MAKE} -s -C ./lib/std_libft 2> logs/make_libft_logs.txt 
+${NAME}: make_mlx
 				@${CC} ${CFLAGS} ${OBJS} ${MLX} ${LIBFT} -o ${NAME}
 				@echo "${LIGHT_CYAN}${BOLD}cub3D	${RESET}${BLUE}${BOLD}${ITALIC}🔥 Ready to fire ! 🔥${RESET}\n\n"
 
@@ -96,6 +90,20 @@ re:
 #                              utilities                                       #
 #                                                                              #
 ################################################################################
+
+make_mlx: make_libft
+				@${MAKE} -s -C ./lib/std_libft 2> logs/make_libft_logs.txt 
+
+make_libft: cub3D_logs
+				@${MAKE} -s -C ./lib/mlx_Linux 2> logs/make_mlx_logs.txt 
+
+cub3D_logs: success_o2c_files
+				@mkdir -p logs
+				@echo "${LIGHT_CYAN}${BOLD}cub3D	${RESET}[${LIGHT_GREEN}info${RESET}] : Logs directory successfully created\n"
+
+success_o2c_files: ${OBJS}
+				@echo "${LIGHT_CYAN}${BOLD}cub3D	${RESET}[${LIGHT_GREEN}info${RESET}] : Objects directory successfully created"
+				@echo "${LIGHT_CYAN}${BOLD}cub3D	${RESET}[${LIGHT_GREEN}info${RESET}] : C-files successfully converted to objects-files"
 
 title:
 				@${CLEAR}
