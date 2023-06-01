@@ -6,7 +6,7 @@
 #    By: vmourtia <vmourtia@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/22 12:40:08 by sel-maar          #+#    #+#              #
-#    Updated: 2023/05/31 18:51:42 by vmourtia         ###   ########.fr        #
+#    Updated: 2023/06/01 15:44:16 by vmourtia         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,7 +65,6 @@ clean:
 				@${RM} ${OBJS_PATH} ${NAME}
 
 re: 
-				@${MAKE} fclean
 				@${MAKE} all
 
 .phony: all clean fclean re

@@ -6,11 +6,13 @@
 #    By: vmourtia <vmourtia@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/22 12:40:08 by sel-maar          #+#    #+#              #
-#    Updated: 2023/06/01 13:40:13 by vmourtia         ###   ########.fr        #
+#    Updated: 2023/06/01 15:27:50 by vmourtia         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME =			cub3D
+
+NAME_LIB =		libcub3D.a
 
 ################################################################################
 #                                                                              #
@@ -61,29 +63,44 @@ LIBFT =			-L./lib/std_libft -lstd_libft
 #                                                                              #
 ################################################################################
 
-all: title $(NAME) 
+all: title ${NAME} 
 
 ${NAME}: make_mlx
 				@${CC} ${CFLAGS} ${OBJS} ${MLX} ${LIBFT} -o ${NAME}
 				@echo "${LIGHT_CYAN}${BOLD}cub3D	${RESET}${BLUE}${BOLD}${ITALIC}🔥 Ready to fire ! 🔥${RESET}\n\n"
 
-$(OBJS_PATH)%.o: %.c
-				@mkdir -p $(dir $@)
-				@$(CC) ${INCLUDES} -O3 -c $< -o $@
+${OBJS_PATH}%.o: %.c
+				@mkdir -p ${dir $@}
+				@${CC} ${INCLUDES} -O3 -c $< -o $@
 
 clean:
-				@$(MAKE) clean -s -C ./lib/mlx_Linux
-				@$(MAKE) clean -s -C ./lib/std_libft
-				@$(RM) $(OBJS_PATH) logs
+				@${MAKE} clean -s -C ./lib/mlx_Linux
+				@${MAKE} clean -s -C ./lib/std_libft
+				@${MAKE} clean -s -C ./tests
+				@${RM} ${OBJS_PATH} logs
 
 fclean: clean
-				@$(RM) $(NAME)
+				@${RM} ${NAME} ${NAME_LIB}
 
 re: 
-				@$(MAKE) fclean -s
-				@$(MAKE) all -s
+				@${MAKE} fclean -s
+				@${MAKE} all -s
 
-.phony: all clean fclean re
+.PHONY: all clean fclean re
+
+################################################################################
+#                                                                              #
+#                                  tests                                       #
+#                                                                              #
+################################################################################
+
+test: make_cublib
+
+make_cublib: ${NAME_LIB}
+				@${MAKE} -s -C ./tests/
+
+${NAME_LIB}: make_mlx
+				@ar -r ${NAME_LIB} ${OBJS}
 
 ################################################################################
 #                                                                              #
