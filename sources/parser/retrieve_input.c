@@ -6,7 +6,7 @@
 /*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 15:28:27 by valentin          #+#    #+#             */
-/*   Updated: 2023/06/12 17:28:10 by valentin         ###   ########.fr       */
+/*   Updated: 2023/06/12 18:53:00 by valentin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static int	count_lines(char *filepath)
 	return (count);
 }
 
-static void	fill_filetab(t_data *data)
+static int	fill_filetab(t_data *data)
 {
 	char	*line;
 	int		i;
@@ -44,9 +44,9 @@ static void	fill_filetab(t_data *data)
 	line = get_next_line(data->input_infos.fd);
 	while (line != NULL)
 	{
-		data->input_infos.filetab[x] = malloc((ft_strlen(line) + 1) * sizeof(char));
+		data->input_infos.filetab[x] = calloc(ft_strlen(line) + 1, sizeof(char));
 		if (data->input_infos.filetab[x] == NULL)
-			return (free_tab(data->input_infos.filetab));
+			return (free_tab((void **)data->input_infos.filetab), printf("\nKO\n"), 0);
 		while (line[i] != '\0')
 			data->input_infos.filetab[x][y++] = line[i++];
 		data->input_infos.filetab[x++][y] = '\0';
@@ -56,16 +56,19 @@ static void	fill_filetab(t_data *data)
 		line = get_next_line(data->input_infos.fd);
 	}
 	data->input_infos.filetab[x] = NULL;
+	return (1);
 }
 
-void	retrieve_input(char *filepath, t_data *data)
+int	retrieve_input(char *filepath, t_data *data)
 {
 	data->input_infos.nb_of_lines = count_lines(filepath);
 	data->input_infos.filepath = filepath;
-	data->input_infos.filetab = malloc((data->input_infos.nb_of_lines + 1) * sizeof(char *));
+	data->input_infos.filetab = calloc(data->input_infos.nb_of_lines + 1, sizeof(char *));
 	if (data->input_infos.filetab == NULL)
-		return ;
+		return (0);
 	data->input_infos.fd = open(filepath, O_RDONLY);
-	fill_filetab(data);
+	if (fill_filetab(data) == 0)
+		return (0);
 	close(data->input_infos.fd);
+	return (1);
 }

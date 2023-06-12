@@ -6,7 +6,7 @@
 /*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 11:50:41 by sel-maar          #+#    #+#             */
-/*   Updated: 2023/06/12 14:57:52 by valentin         ###   ########.fr       */
+/*   Updated: 2023/06/12 18:22:43 by valentin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static t_bool	is_valid_char(char c)
 {
 	char	*invalid_set;
 
-	invalid_set = "/:?<>|*^ ";
+	invalid_set = ":?<>|*^ ";
 	while (*invalid_set)
 	{
 		if (c == *invalid_set)
