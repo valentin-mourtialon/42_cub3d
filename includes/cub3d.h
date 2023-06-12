@@ -6,7 +6,7 @@
 /*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 12:13:08 by sel-maar          #+#    #+#             */
-/*   Updated: 2023/06/12 20:13:04 by valentin         ###   ########.fr       */
+/*   Updated: 2023/06/12 23:45:31 by valentin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,8 @@
 
 # define CUB ".cub"
 # define XPM ".xpm"
+
+# define INCLUDE_LINE_BREAK 1;
 
 # define INVALID_ARG "Invalid argument"
 # define INVALID_FILENAME "Invalid filename"

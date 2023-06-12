@@ -6,13 +6,19 @@
 /*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 20:02:20 by valentin          #+#    #+#             */
-/*   Updated: 2023/06/12 20:34:19 by valentin         ###   ########.fr       */
+/*   Updated: 2023/06/12 23:50:51 by valentin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <cub3d.h>
 
-#include "cub3d.h"
+static int	is_space(char c, int include_line_break)
+{
+	if (include_line_break == 1)
+		return (c == ' ' || c == '\t' || c == '\n');
+	else
+		return (c == ' ' || c == '\t');
+}
 
 static char	*get_texture_path(char *line, int j)
 {
@@ -20,19 +26,19 @@ static char	*get_texture_path(char *line, int j)
 	int		len;
 	int		x;
 
-	while (line[y] && (line[y] == ' ' || line[y] == '\t'))
+	while (line[y] && is_space(line[y], 0))
 		y++;
 	len = y;
-	while (line[len] && (line[len] != ' ' && line[len] != '\t'))
+	while (line[len] && !is_space(line[len], 0))
 		len++;
 	path = malloc(sizeof(char) * (len - y + 1));
 	if (!path)
 		return (NULL);
 	i = 0;
-	while (line[y] && (line[y] != ' ' && line[y] != '\t' && line[y] != '\n'))
+	while (line[y] && !is_space(line[y], INCLUDE_LINE_BREAK))
 		path[x++] = line[y++];
 	path[x] = '\0';
-	while (line[y] && (line[y] == ' ' || line[y] == '\t'))
+	while (line[y] && is_space(line[y], 0))
 		y++;
 	if (line[y] && line[y] != '\n')
 	{
@@ -41,11 +47,11 @@ static char	*get_texture_path(char *line, int j)
 	}
 	return (path);
 }
-
+1
 static int	cardinal_textures(t_textures_infos *tx_infos, char *line, int y)
 {
 	if (line[y + 2] && ft_isprint(line[y + 2]))
-		return (ERR);
+		return (ERROR);
 	if (line[y] == 'N' && line[y + 1] == 'O' && !(tx_infos->NO))
 		tx_infos->NO = get_texture_path(line, y + 2);
 	else if (line[y] == 'S' && line[y + 1] == 'O' && !(tx_infos->SO))
@@ -61,12 +67,11 @@ static int	cardinal_textures(t_textures_infos *tx_infos, char *line, int y)
 
 static int	retrieve_data(t_data *data, char **filetab, int x, int y)
 {
-	while (filetab[x][y] == ' ' || filetab[x][y] == '\t' || filetab[x][y] == '\n')
+	while (is_space(filetab[x][y], INCLUDE_LINE_BREAK))
 		y++;
 	if (ft_isprint(filetab[x][y]) && !ft_isdigit(filetab[x][y]))
 	{
-		if (filetab[x][y + 1] && ft_isprint(filetab[x][y + 1])
-			&& !ft_isdigit(filetab[x][y]))
+		if (filetab[x][y + 1] && ft_isprint(filetab[x][y + 1]) && !ft_isdigit(filetab[x][y]))
 		{
 			if (cardinal_textures(&data->textures_infos, filetab[x], y) == ERROR)
 				return (printf("INVALID TEXTURE\n"), FAILURE);
