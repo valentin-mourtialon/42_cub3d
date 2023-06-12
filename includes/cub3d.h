@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vmourtia <vmourtia@student.42.fr>          +#+  +:+       +#+        */
+/*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 12:13:08 by sel-maar          #+#    #+#             */
-/*   Updated: 2023/06/01 13:47:09 by vmourtia         ###   ########.fr       */
+/*   Updated: 2023/06/12 14:56:29 by valentin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,28 @@
 # include <stdlib.h>
 # include <math.h>
 # include <unistd.h>
+# include <errno.h>
+# include <fcntl.h>
+# include <string.h>
+# include <sys/types.h>
+# include <sys/stat.h>
+# include <unistd.h>
+# include <X11/keysym.h>
+# include <X11/X.h>
 
 /****************************************************/
 /*					   DEFINES  					*/
 /****************************************************/
 
 # define STDERR 2
-# define EXTENSION ".cub"
+
+# define CUB ".cub"
+# define XPM ".xpm"
+
+# define INVALID_ARG "Invalid argument"
 # define INVALID_FILENAME "Invalid filename"
 # define INVALID_EXTENSION "Invalid extension"
+# define DIRECTORY "Input argument should be a filename not a directory."
 # define SHORT_FILENAME "A filename should have a .cub extension and should not be empty!"
 # define SPECIAL_CHARACTERS "A filename cannot contain special characters!"
 
