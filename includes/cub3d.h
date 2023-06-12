@@ -6,7 +6,7 @@
 /*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 12:13:08 by sel-maar          #+#    #+#             */
-/*   Updated: 2023/06/12 14:56:29 by valentin         ###   ########.fr       */
+/*   Updated: 2023/06/12 17:29:03 by valentin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 /****************************************************/
 
 # include <mlx.h>
+# include <get_next_line.h>
 # include <libft.h>
 # include <stdio.h>
 # include <stdlib.h>
@@ -57,20 +58,42 @@ typedef enum e_bool {
 	true,
 }	t_bool;
 
-typedef struct s_data_map {
-	char	*south;
-	char	*north;
-	char	*east;
-	char	*west;
-	int		floor[3];
-	int		colors[3];
-}	t_data_map;
+/*
+typedef struct t_textures_infos;
+typedef struct t_player;
+typedef struct t_ray_casting;
+*/
+
+typedef struct s_input_infos {
+	char		**filetab;
+	char		*filepath;
+	int			fd;
+	int			nb_of_lines;
+	int			height;
+	int			width;
+	int			index_end_of_map;
+} t_input_infos;
+
+typedef struct s_data {
+	void				*mlx;
+	void				*win;
+	int					win_height;
+	int					win_width;
+	char				**map;
+	int					**textures;
+	int					**textures_pixels;
+	/*t_textures_infos	textures_infos;*/
+	t_input_infos		input_infos;
+	/*t_player			player;
+	t_ray_casting		rc;*/
+}	t_data;
 
 /****************************************************/
 /*						PARSER						*/
 /****************************************************/
 
 int		check_args(int ac, char **av);
+void	retrieve_input(char *filepath, t_data *data);
 
 /****************************************************/
 /*						ERROR						*/
@@ -83,6 +106,7 @@ void	throw_error_msg(char *header, char *details, char *body);
 /****************************************************/
 
 void	free_ptr(void *ptr);
+void	free_tab(char **tab);
 
 /****************************************************/
 /*						UTILS						*/

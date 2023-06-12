@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: vmourtia <vmourtia@student.42.fr>          +#+  +:+       +#+         #
+#    By: valentin <valentin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/22 12:40:08 by sel-maar          #+#    #+#              #
-#    Updated: 2023/06/01 15:44:16 by vmourtia         ###   ########.fr        #
+#    Updated: 2023/06/12 16:53:09 by valentin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,6 +32,7 @@ INCLUDES = 		-I./includes
 
 SRCS_FILES =	ft_strlen.c \
 				ft_strcmp.c \
+				ft_strchr.c \
 				ft_strjoin.c \
 				ft_putendl_fd.c \
 				ft_strdup.c

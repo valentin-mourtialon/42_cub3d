@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: vmourtia <vmourtia@student.42.fr>          +#+  +:+       +#+         #
+#    By: valentin <valentin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/22 12:40:08 by sel-maar          #+#    #+#              #
-#    Updated: 2023/06/01 16:42:51 by vmourtia         ###   ########.fr        #
+#    Updated: 2023/06/12 17:34:59 by valentin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ CC =			cc
 
 CFLAGS =		-Wall -Werror -Wextra -g3
 
-INCLUDES = 		-I/usr/include -I./includes -I./lib/mlx_Linux -I./lib/std_libft/includes
+INCLUDES = 		-I/usr/include -I./includes -I./lib/mlx_Linux -I./lib/std_libft/includes -I./lib/gnl/includes
 
 ################################################################################
 #                                                                              #
@@ -34,6 +34,7 @@ INCLUDES = 		-I/usr/include -I./includes -I./lib/mlx_Linux -I./lib/std_libft/inc
 
 SRCS_FILES =	cub3d.c \
 				parser/check_args.c \
+				parser/retrieve_input.c \
 				utils/update_join.c \
 				exit/free.c \
 				error/error_msg.c
@@ -56,6 +57,7 @@ SRCS = 			${addprefix ${SRCS_PATH}, ${SRCS_FILES}}
 
 MLX =			-L./lib/mlx_Linux -L/usr/lib -lmlx_Linux -lXext -lX11 -lm -lz 
 LIBFT =			-L./lib/std_libft -lstd_libft
+GNL =			-L./lib/gnl -lgnl
 
 ################################################################################
 #                                                                              #
@@ -66,7 +68,7 @@ LIBFT =			-L./lib/std_libft -lstd_libft
 all: title ${NAME} 
 
 ${NAME}: make_mlx
-				@${CC} ${CFLAGS} ${OBJS} ${MLX} ${LIBFT} -o ${NAME}
+				@${CC} ${CFLAGS} ${OBJS} ${MLX} ${GNL} ${LIBFT} -o ${NAME}
 				@echo "${LIGHT_CYAN}${BOLD}cub3D	${RESET}${BLUE}${BOLD}${ITALIC}🔥 Ready to fire ! 🔥${RESET}\n\n"
 
 ${OBJS_PATH}%.o: %.c
@@ -76,6 +78,7 @@ ${OBJS_PATH}%.o: %.c
 clean:
 				@${MAKE} clean -s -C ./lib/mlx_Linux
 				@${MAKE} clean -s -C ./lib/std_libft
+				@${MAKE} clean -s -C ./lib/gnl
 				@${MAKE} clean -s -C ./tests
 				@${RM} ${OBJS_PATH} logs
 
@@ -110,8 +113,11 @@ ${NAME_LIB}: make_mlx
 #                                                                              #
 ################################################################################
 
-make_mlx: make_libft
+make_mlx: make_gnl
 				@${MAKE} -s -C ./lib/std_libft 2> logs/make_libft_logs.txt 
+
+make_gnl: make_libft
+				@${MAKE} -s -C ./lib/gnl 2> logs/make_gnl_logs.txt
 
 make_libft: cub3D_logs
 				@${MAKE} -s -C ./lib/mlx_Linux 2> logs/make_mlx_logs.txt 

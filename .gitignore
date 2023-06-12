@@ -54,4 +54,5 @@ dkms.conf
 objects/
 logs/
 
+*.png
 notes.txt
