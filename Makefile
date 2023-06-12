@@ -6,7 +6,7 @@
 #    By: valentin <valentin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/22 12:40:08 by sel-maar          #+#    #+#              #
-#    Updated: 2023/06/12 13:11:16 by valentin         ###   ########.fr        #
+#    Updated: 2023/06/12 13:17:13 by valentin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -76,7 +76,6 @@ ${OBJS_PATH}%.o: %.c
 clean:
 				@${MAKE} clean -s -C ./lib/mlx_Linux
 				@${MAKE} clean -s -C ./lib/std_libft
-				@${MAKE} clean -s -C ./tests
 				@${RM} ${OBJS_PATH} logs
 
 fclean: clean
@@ -87,6 +86,22 @@ re:
 				@${MAKE} all -s
 
 .PHONY: all clean fclean re
+
+################################################################################
+#                                                                              #
+#                                  tests                                       #
+#                                                                              #
+################################################################################
+
+test: test_title make_cublib
+				@./test 2>> logs/test_logs.txt
+				@echo "${BOLD}Find test logs in logs/test_logs.txt\n\n${RESET}"
+
+make_cublib: ${NAME_LIB}
+				@${MAKE} -s -C ./tests/
+
+${NAME_LIB}: make_mlx
+				@ar -r ${NAME_LIB} ${OBJS} 2> logs/make_test_logs.txt
 
 ################################################################################
 #                                                                              #
@@ -118,6 +133,19 @@ title:
 				@echo "${BLUE}    ██║░░██╗██║░░░██║██╔══██╗░╚═══██╗██║░░██║    ${RESET}"
 				@echo "${BLUE}    ╚█████╔╝╚██████╔╝██████╦╝██████╔╝██████╔╝    ${RESET}"
 				@echo "${BLUE}    ░╚════╝░░╚═════╝░╚═════╝░╚═════╝░╚═════╝░    ${RESET}"
+				@echo
+				@echo
+
+test_title:
+				@${CLEAR}
+				@echo
+				@echo
+				@echo "${LIGHT_CYAN}    ████████╗███████╗░██████╗████████╗    ${RESET}"
+				@echo "${LIGHT_CYAN}    ╚══██╔══╝██╔════╝██╔════╝╚══██╔══╝    ${RESET}"
+				@echo "${LIGHT_CYAN}    ░░░██║░░░█████╗░░╚█████╗░░░░██║░░░    ${RESET}"
+				@echo "${LIGHT_CYAN}    ░░░██║░░░██╔══╝░░░╚═══██╗░░░██║░░░    ${RESET}"
+				@echo "${LIGHT_CYAN}    ░░░██║░░░███████╗██████╔╝░░░██║░░░    ${RESET}"
+				@echo "${LIGHT_CYAN}    ░░░╚═╝░░░╚══════╝╚═════╝░░░░╚═╝░░░    ${RESET}"
 				@echo
 				@echo
 
