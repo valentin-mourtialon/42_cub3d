@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_data.c                                        :+:      :+:    :+:   */
+/*   init_textures_infos.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/12 17:54:02 by valentin          #+#    #+#             */
-/*   Updated: 2023/06/12 19:56:36 by valentin         ###   ########.fr       */
+/*   Created: 2023/06/12 19:57:05 by valentin          #+#    #+#             */
+/*   Updated: 2023/06/12 20:00:44 by valentin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <cub3d.h>
 
-void	init_data(t_data *data)
+void	init_textures_infos(t_texinfo *textures)
 {
-	data->mlx = NULL;
-	data->win = NULL;
-	data->win_height = WIN_HEIGHT;
-	data->win_width = WIN_WIDTH;
-	/*init_player(&data->player);*/
-	init_textures_infos(&data->texinfo);
-	data->map = NULL;
-	init_input_infos(&data->input_infos);
-	/*init_img_clean(&data->minimap);
-	data->texture_pixels = NULL;
-	data->textures = NULL;*/
+	textures->north = NULL;
+	textures->south = NULL;
+	textures->west = NULL;
+	textures->east = NULL;
+	textures->floor = 0;
+	textures->ceiling = 0;
+	/*textures->hex_floor = 0x0;
+	textures->hex_ceiling = 0x0;
+	textures->size = TEX_SIZE;
+	textures->step = 0.0;
+	textures->pos = 0.0;
+	textures->x = 0;
+	textures->y = 0;*/
 }

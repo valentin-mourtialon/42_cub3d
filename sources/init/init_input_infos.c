@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_data.c                                        :+:      :+:    :+:   */
+/*   init_input_infos.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/12 17:54:02 by valentin          #+#    #+#             */
-/*   Updated: 2023/06/12 19:56:36 by valentin         ###   ########.fr       */
+/*   Created: 2023/06/12 19:55:43 by valentin          #+#    #+#             */
+/*   Updated: 2023/06/12 19:56:02 by valentin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <cub3d.h>
 
-void	init_data(t_data *data)
+void	init_input_infos(t_input_infos *input_infos)
 {
-	data->mlx = NULL;
-	data->win = NULL;
-	data->win_height = WIN_HEIGHT;
-	data->win_width = WIN_WIDTH;
-	/*init_player(&data->player);*/
-	init_textures_infos(&data->texinfo);
-	data->map = NULL;
-	init_input_infos(&data->input_infos);
-	/*init_img_clean(&data->minimap);
-	data->texture_pixels = NULL;
-	data->textures = NULL;*/
+	input_infos->filepath = NULL;
+	input_infos->filetab = NULL;
+	input_infos->fd = 0;
+	input_infos->nb_of_lines = 0;
+	input_infos->height = 0;
+	input_infos->width = 0;
+	input_infos->index_end_of_map = 0;
 }

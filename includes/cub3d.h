@@ -6,7 +6,7 @@
 /*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 12:13:08 by sel-maar          #+#    #+#             */
-/*   Updated: 2023/06/12 18:10:54 by valentin         ###   ########.fr       */
+/*   Updated: 2023/06/12 20:13:04 by valentin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,15 @@
 # define SHORT_FILENAME "A filename should have a .cub extension and should not be empty!"
 # define SPECIAL_CHARACTERS "A filename cannot contain special characters!"
 
+enum e_output_status
+{
+	SUCCESS = 0,
+	FAILURE = 1,
+	ERROR = 2,
+	BREAK = 3,
+	CONTINUE = 4
+};
+
 /******************************************************************************/
 /*                                                                            */
 /*                              structures                                    */
@@ -72,9 +81,16 @@ typedef enum e_bool {
 	true,
 }	t_bool;
 
-/*
-typedef struct t_textures_infos;
-typedef struct t_player;
+typedef struct s_textures_infos {
+	char	*NO;
+	char	*SO;
+	char	*WE;
+	char	*EA;
+	int		*F;
+	int		*C;
+}	t_textures_infos;
+
+/*typedef struct t_player;
 typedef struct t_ray_casting;
 */
 
@@ -96,7 +112,7 @@ typedef struct s_data {
 	char				**map;
 	/*int					**textures;
 	int					**textures_pixels;*/
-	/*t_textures_infos	textures_infos;*/
+	t_textures_infos	textures_infos;
 	t_input_infos		input_infos;
 	/*t_player			player;
 	t_ray_casting		rc;*/
@@ -110,6 +126,8 @@ typedef struct s_data {
 /******************************************************************************/
 
 void	init_data(t_data *data);
+void	init_input_infos(t_input_infos *input_infos);
+void	init_textures_infos(t_texinfo *textures);
 
 /******************************************************************************/
 /*                                                                            */
@@ -119,6 +137,7 @@ void	init_data(t_data *data);
 
 int		check_args(int ac, char **av);
 int		retrieve_input(char *filepath, t_data *data);
+int		parse_file(t_data *data, char **filetab);
 
 /******************************************************************************/
 /*                                                                            */
