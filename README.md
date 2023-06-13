@@ -11,13 +11,12 @@ See `main` branch for the project's Readme.
 4. parse (parser/input_parse.c) 
 	- extract_parts (parser/input_parse.c)
 	- cardinals_textures (parser/textures_cardinals.c)
-	- **WIP**: colors_textures (parser/textures_colors.c)
+	- colors_textures (parser/textures_colors.c)
 	- **WIP**: create_map
 
 # TODO
 
 1. Implement `.d` for the compilation
-2. Solve make issue !
-3. Write additional tests for the function `check_input`
-4. Write tests for the function `retrieve_input` which goal is to put the file content into the `data.filetab` tab
-8. Write tests for the function `extract_parts`.
+2. Write additional tests for the function `check_input`
+3. Write tests for the function `retrieve_input` which goal is to put the file content into the `data.filetab` tab
+4. Write tests for the function `extract_parts`.
