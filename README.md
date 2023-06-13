@@ -17,9 +17,7 @@ See `main` branch for the project's Readme.
 # TODO
 
 1. Implement `.d` for the compilation
-2. Add `ft_calloc` to the std_libtf
-3. Add `ft_isprint` ("is printable") to std_libft
-4. Add `ft_isdigit` to std_libft
-5. Write additional tests for the function `check_input`
-6. Write tests for the function `retrieve_input` which goal is to put the file content into the `data.filetab` tab
-7. Write tests for the function `extract_parts`.
+2. Solve make issue !
+3. Write additional tests for the function `check_input`
+4. Write tests for the function `retrieve_input` which goal is to put the file content into the `data.filetab` tab
+8. Write tests for the function `extract_parts`.

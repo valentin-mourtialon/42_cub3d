@@ -6,7 +6,7 @@
 /*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 12:13:08 by sel-maar          #+#    #+#             */
-/*   Updated: 2023/06/13 16:10:19 by valentin         ###   ########.fr       */
+/*   Updated: 2023/06/13 16:15:56 by valentin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,10 @@
 #  define WIN_WIDTH 900
 # endif
 
-# define STDERR 2
-
 # define CUB ".cub"
 # define XPM ".xpm"
+
+# define STDERR 2
 
 # define INCLUDE_LINE_BREAK 1
 
