@@ -6,7 +6,7 @@
 /*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 12:13:08 by sel-maar          #+#    #+#             */
-/*   Updated: 2023/06/12 23:45:31 by valentin         ###   ########.fr       */
+/*   Updated: 2023/06/13 14:28:11 by valentin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,8 +65,8 @@
 
 enum e_output_status
 {
-	SUCCESS = 0,
-	FAILURE = 1,
+	FAILURE = 0,
+	SUCCESS = 1,
 	ERROR = 2,
 	BREAK = 3,
 	CONTINUE = 4
@@ -137,9 +137,12 @@ void	init_textures_infos(t_texinfo *textures);
 /*                                                                            */
 /******************************************************************************/
 
-int		check_args(int ac, char **av);
+int		check_input(int ac, char **av);
 int		retrieve_input(char *filepath, t_data *data);
-int		parse_file(t_data *data, char **filetab);
+int		cardinals_textures(t_textures_infos *tx_infos, char *line, int y);
+int		parse(t_data *data, char **filetab);
+int		is_space(char c, int include_line_break);
+void	skip_spaces(char **filetab, int x, int *y);
 
 /******************************************************************************/
 /*                                                                            */

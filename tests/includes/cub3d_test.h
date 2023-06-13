@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d_test.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vmourtia <vmourtia@student.42.fr>          +#+  +:+       +#+        */
+/*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 13:58:40 by vmourtia          #+#    #+#             */
-/*   Updated: 2023/06/01 14:54:56 by vmourtia         ###   ########.fr       */
+/*   Updated: 2023/06/13 14:17:54 by valentin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,13 @@
 # define LIGHT_CYAN "\033[96m"
 # define BLUE "\033[34m"
 
-typedef struct s_check_args_test
+typedef struct s_check_input_test
 {
 		int		ac;
 		char	*input[2];
 		int		expected;
-}	t_check_args_test;
+}	t_check_input_test;
 
-void	check_args_test(void);
+void	check_input_test(void);
 
 #endif

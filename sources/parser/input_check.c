@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_args.c                                       :+:      :+:    :+:   */
+/*   input_check.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 11:50:41 by sel-maar          #+#    #+#             */
-/*   Updated: 2023/06/12 18:22:43 by valentin         ###   ########.fr       */
+/*   Updated: 2023/06/13 14:28:31 by valentin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,13 +51,13 @@ static t_bool	is_valid_filename(char *filename)
 }
 
 /*
-	check_args:
+	check_input:
 		This function is called before the parsing.
 		It takes the program arguments ac and av as input 
 		It returns 1 if the file provided is valid.
 		It returns 0 otherwise. 
 */
-int	check_args(int ac, char **av)
+int	check_input(int ac, char **av)
 {
 	char	*filename;
 	int		filename_length;

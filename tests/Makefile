@@ -6,7 +6,7 @@
 #    By: valentin <valentin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/01 14:10:48 by vmourtia          #+#    #+#              #
-#    Updated: 2023/06/12 18:13:28 by valentin         ###   ########.fr        #
+#    Updated: 2023/06/13 14:19:44 by valentin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ CFLAGS =		-Wall -Wextra -Werror
 
 INCLUDES =		-I./includes -I../includes -I../lib/mlx_Linux -I../lib/std_libft/includes
 
-SRCS_FILES =	parser/check_args_test.c \
+SRCS_FILES =	parser/check_input_test.c \
 				main.c
 
 OBJS_FILES =	${SRCS:.c=.o}

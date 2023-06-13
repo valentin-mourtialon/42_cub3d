@@ -1,19 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   parsing_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/01 13:55:52 by vmourtia          #+#    #+#             */
-/*   Updated: 2023/06/13 14:19:57 by valentin         ###   ########.fr       */
+/*   Created: 2023/06/13 13:54:11 by valentin          #+#    #+#             */
+/*   Updated: 2023/06/13 13:55:36 by valentin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <cub3d_test.h>
+#include <cub3d.h>
 
-int	main(void)
+void	skip_spaces(char **filetab, int x, int *y)
 {
-	check_input_test();
-	return (0);
+	while (is_space(filetab[x][*y], INCLUDE_LINE_BREAK))
+		(*y)++;
+}
+
+int	is_space(char c, int include_line_break)
+{
+	if (include_line_break == 1)
+		return (c == ' ' || c == '\t' || c == '\n');
+	else
+		return (c == ' ' || c == '\t');
 }

@@ -1,24 +1,25 @@
-# cub3d
-This project is part of the 42 school curriculum.
+# Dev cub3d
+This is the `dev` branch Readme.
 
-cub3D is a minimalist implementation of the first-person shooter game Wolfenstein 3D, leveraging the power of raycasting techniques to generate a pseudo-3D gaming environment.
+See `main` branch for the project's Readme.
 
+# Program details
 
-This project was inspired by the original game's groundbreaking usage of raycasting technology, which transformed the gaming landscape by creating an immersive first-person 3D experience on the 2D screens of the time.
+1. check_input (parser/input_check.c)
+2. init_data (init/init_data.c)
+3. retrieve_input (parser/input_retrieve.c)
+4. parse (parser/input_parse.c) 
+	- extract_parts (parser/input_parse.c)
+	- cardinals_textures (parser/textures_cardinals.c)
+	- **WIP**: colors_textures (parser/textures_colors.c)
+	- **WIP**: create_map
 
+# TODO
 
-cub3D seeks to take a deep dive into these foundational graphics rendering techniques, aiming to understand and recreate the process that brought these three-dimensional worlds to life.
-
-
-Please note that this project is purely educational and is not intended for commercial use.
-
-Authors:
-- vmourtia: Valentin Mourtialon
-- sel-maar: Sami El-Maaroufi
-
-## Features
-- 3D rendering using raycasting techniques
-- Simple pathfinding algorithm for validating the input map
-- Simple, intuitive controls for player movement
-- Customizable maps and textures
-- Collision detection
+1. Implement `.d` for the compilation
+2. Add `ft_calloc` to the std_libtf
+3. Add `ft_isprint` ("is printable") to std_libft
+4. Add `ft_isdigit` to std_libft
+5. Write additional tests for the function `check_input`
+6. Write tests for the function `retrieve_input` which goal is to put the file content into the `data.filetab` tab
+7. Write tests for the function `extract_parts`.
