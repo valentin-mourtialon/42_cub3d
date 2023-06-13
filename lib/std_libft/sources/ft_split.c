@@ -6,11 +6,11 @@
 /*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 15:47:48 by valentin          #+#    #+#             */
-/*   Updated: 2023/06/13 15:51:34 by valentin         ###   ########.fr       */
+/*   Updated: 2023/06/13 16:46:52 by valentin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <cub3d.h>
+#include <libft.h>
 
 static int	is_sep(char a, char c)
 {

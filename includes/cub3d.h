@@ -6,7 +6,7 @@
 /*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 12:13:08 by sel-maar          #+#    #+#             */
-/*   Updated: 2023/06/13 16:15:56 by valentin         ###   ########.fr       */
+/*   Updated: 2023/06/13 16:58:23 by valentin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,18 +22,12 @@
 # include <mlx.h>
 # include <get_next_line.h>
 # include <libft.h>
+# include <errno.h>
+# include <string.h>
 # include <stdio.h>
 # include <stdlib.h>
-# include <math.h>
 # include <unistd.h>
-# include <errno.h>
-# include <fcntl.h>
-# include <string.h>
-# include <sys/types.h>
-# include <sys/stat.h>
 # include <unistd.h>
-# include <X11/keysym.h>
-# include <X11/X.h>
 
 /******************************************************************************/
 /*                                                                            */
@@ -122,7 +116,7 @@ void	init_textures_infos(t_textures_infos *textures_infos);
 
 int		check_input(int ac, char **av);
 int		retrieve_input(char *filepath, t_data *data);
-int		cardinals_textures(t_textures_infos *tx_infos, char *line, int y);
+int		cardinals_textures(t_textures_infos *textures_infos, char *line, int y);
 int		colors_textures(t_data *data, t_textures_infos *textures_infos, char *line, int y);
 int		parse(t_data *data, char **filetab);
 int		is_space(char c, int include_line_break);

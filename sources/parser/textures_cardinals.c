@@ -6,7 +6,7 @@
 /*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 14:01:18 by valentin          #+#    #+#             */
-/*   Updated: 2023/06/13 15:44:13 by valentin         ###   ########.fr       */
+/*   Updated: 2023/06/13 16:57:10 by valentin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static char	*get_texture_path(char *line, int y)
 	return (path);
 }
 
-int	cardinal_textures(t_textures_infos *textures_infos, char *line, int y)
+int	cardinals_textures(t_textures_infos *textures_infos, char *line, int y)
 {
 	if (line[y + 2] && ft_isprint(line[y + 2]))
 		return (ERROR);
