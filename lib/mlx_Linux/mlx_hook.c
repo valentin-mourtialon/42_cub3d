@@ -36,5 +36,5 @@ int	mlx_do_key_autorepeaton(t_xvar *xvar)
 
 int	mlx_do_sync(t_xvar *xvar)
 {
-  XSync(xvar->display, False);
+  XSync(xvar->display, 0);
 }

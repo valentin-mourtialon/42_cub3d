@@ -6,7 +6,7 @@
 /*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 11:10:13 by vmourtia          #+#    #+#             */
-/*   Updated: 2023/06/12 18:12:25 by valentin         ###   ########.fr       */
+/*   Updated: 2023/06/13 15:45:31 by valentin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,29 @@ void	free_tab(void **tab)
 	}
 }
 
+static void	free_textures_infos(t_textures_infos *textures_infos)
+{
+	if (textures_infos->NO)
+		free(textures_infos->NO);
+	if (textures_infos->SO)
+		free(textures_infos->SO);
+	if (textures_infos->WE)
+		free(textures_infos->WE);
+	if (textures_infos->EA)
+		free(textures_infos->EA);
+	if (textures_infos->F)
+		free(textures_infos->F);
+	if (textures_infos->C)
+		free(textures_infos->C);
+}
+
 void	free_data(t_data *data)
 {
 	/*if (data->textures)
 		free_tab((void **)data->textures);*/
 	/*if (data->texture_pixels)
 		free_tab((void **)data->texture_pixels);*/
-	//free_texinfo(&data->texinfo);
+	free_textures_infos(&data->textures_infos);
 	if (data->input_infos.fd > 0)
 		close(data->input_infos.fd);
 	if (data->input_infos.filetab)

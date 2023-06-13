@@ -6,7 +6,7 @@
 /*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 12:13:08 by sel-maar          #+#    #+#             */
-/*   Updated: 2023/06/13 14:28:11 by valentin         ###   ########.fr       */
+/*   Updated: 2023/06/13 16:10:19 by valentin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,13 @@
 # define CUB ".cub"
 # define XPM ".xpm"
 
-# define INCLUDE_LINE_BREAK 1;
+# define INCLUDE_LINE_BREAK 1
+
+# define FAILURE 0
+# define SUCCESS 1
+# define ERROR 2
+# define BREAK 3
+# define CONTINUE 4
 
 # define INVALID_ARG "Invalid argument"
 # define INVALID_FILENAME "Invalid filename"
@@ -63,25 +69,11 @@
 # define SHORT_FILENAME "A filename should have a .cub extension and should not be empty!"
 # define SPECIAL_CHARACTERS "A filename cannot contain special characters!"
 
-enum e_output_status
-{
-	FAILURE = 0,
-	SUCCESS = 1,
-	ERROR = 2,
-	BREAK = 3,
-	CONTINUE = 4
-};
-
 /******************************************************************************/
 /*                                                                            */
 /*                              structures                                    */
 /*                                                                            */
 /******************************************************************************/
-
-typedef enum e_bool {
-	false,
-	true,
-}	t_bool;
 
 typedef struct s_textures_infos {
 	char	*NO;
@@ -92,10 +84,6 @@ typedef struct s_textures_infos {
 	int		*C;
 }	t_textures_infos;
 
-/*typedef struct t_player;
-typedef struct t_ray_casting;
-*/
-
 typedef struct s_input_infos {
 	char		**filetab;
 	char		*filepath;
@@ -104,7 +92,7 @@ typedef struct s_input_infos {
 	int			height;
 	int			width;
 	int			index_end_of_map;
-} t_input_infos;
+}	t_input_infos;
 
 typedef struct s_data {
 	void				*mlx;
@@ -112,14 +100,9 @@ typedef struct s_data {
 	int					win_height;
 	int					win_width;
 	char				**map;
-	/*int					**textures;
-	int					**textures_pixels;*/
 	t_textures_infos	textures_infos;
 	t_input_infos		input_infos;
-	/*t_player			player;
-	t_ray_casting		rc;*/
 }	t_data;
-
 
 /******************************************************************************/
 /*                                                                            */
@@ -129,7 +112,7 @@ typedef struct s_data {
 
 void	init_data(t_data *data);
 void	init_input_infos(t_input_infos *input_infos);
-void	init_textures_infos(t_texinfo *textures);
+void	init_textures_infos(t_textures_infos *textures_infos);
 
 /******************************************************************************/
 /*                                                                            */
@@ -140,6 +123,7 @@ void	init_textures_infos(t_texinfo *textures);
 int		check_input(int ac, char **av);
 int		retrieve_input(char *filepath, t_data *data);
 int		cardinals_textures(t_textures_infos *tx_infos, char *line, int y);
+int		colors_textures(t_data *data, t_textures_infos *textures_infos, char *line, int y);
 int		parse(t_data *data, char **filetab);
 int		is_space(char c, int include_line_break);
 void	skip_spaces(char **filetab, int x, int *y);

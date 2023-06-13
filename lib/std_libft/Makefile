@@ -6,7 +6,7 @@
 #    By: valentin <valentin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/22 12:40:08 by sel-maar          #+#    #+#              #
-#    Updated: 2023/06/12 16:53:09 by valentin         ###   ########.fr        #
+#    Updated: 2023/06/13 15:51:54 by valentin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,6 +34,12 @@ SRCS_FILES =	ft_strlen.c \
 				ft_strcmp.c \
 				ft_strchr.c \
 				ft_strjoin.c \
+				ft_calloc.c \
+				ft_bzero.c \
+				ft_isdigit.c \
+				ft_isprint.c \
+				ft_atoi.c \
+				ft_split.c \
 				ft_putendl_fd.c \
 				ft_strdup.c
 

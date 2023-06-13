@@ -55,7 +55,7 @@ int			mlx_loop(t_xvar *xvar)
 			if (win && ev.type < MLX_MAX_EVENT && win->hooks[ev.type].hook)
 				mlx_int_param_event[ev.type](xvar, &ev, win);
 		}
-		XSync(xvar->display, False);
+		XSync(xvar->display, 0);
 		if (xvar->loop_hook)
 			xvar->loop_hook(xvar->loop_param);
 	}

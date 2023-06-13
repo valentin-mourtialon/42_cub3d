@@ -70,11 +70,11 @@ void	*mlx_int_new_xshm_image(t_xvar *xvar,int width,int height,int format)
       free(img);
       return ((void *)0);
     }
-  img->shm.readOnly = False;
+  img->shm.readOnly = 0;
   mlx_X_error = 0;
   save_handler = XSetErrorHandler(shm_att_pb);
   if (!XShmAttach(xvar->display,&(img->shm)) ||
-      0&XSync(xvar->display,False) || mlx_X_error)
+      0&XSync(xvar->display,0) || mlx_X_error)
     {
       XSetErrorHandler(save_handler);
       shmdt(img->data);

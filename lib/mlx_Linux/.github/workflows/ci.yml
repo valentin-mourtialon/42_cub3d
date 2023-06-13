@@ -13,7 +13,7 @@ jobs:
     env:
       DISPLAY: ":99"
     strategy:
-      fail-fast: false
+      fail-fast: 0
       matrix:
         os: [ubuntu-latest, macos-latest]
 
@@ -41,7 +41,7 @@ jobs:
             Xvfb $DISPLAY -screen 0 1280x1024x24 &
         elif [ "$RUNNER_OS" == "macOS" ]; then
             brew install xdotool
-            defaults write org.x.X11 enable_test_extensions -boolean true
+            defaults write org.x.X11 enable_test_extensions -intean 1
             sudo Xvfb $DISPLAY -screen 0 1280x1024x24 &           
         else
             echo "$RUNNER_OS not supported"
@@ -54,7 +54,7 @@ jobs:
       if: matrix.os == 'ubuntu-latest'
       run: make -f Makefile.gen check
     - name: make check MacOS
-      continue-on-error: true
+      continue-on-error: 1
       if: matrix.os == 'macos-latest'
       run: make -f Makefile.gen check
       # Didn't find a way to simulate inputs on Macos. libxdo seem to no longer work on macos.
@@ -81,7 +81,7 @@ jobs:
         fi
  
     - name: Norminette, just for fun
-      continue-on-error: true
+      continue-on-error: 1
       run: |
         pip3 install Norminette
         norminette *.c *.h

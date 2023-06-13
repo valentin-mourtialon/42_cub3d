@@ -42,7 +42,7 @@
 
 # define ENV_DISPLAY "DISPLAY"
 # define LOCALHOST "localhost"
-# define ERR_NO_TRUECOLOR "MinilibX Error : No TrueColor Visual available.\n"
+# define ERR_NO_1COLOR "MinilibX Error : No 1Color Visual available.\n"
 # define WARN_SHM_ATTACH "MinilibX Warning : X server can't attach shared memory.\n"
 
 

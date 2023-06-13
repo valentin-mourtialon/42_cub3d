@@ -30,15 +30,15 @@ void	*mlx_init()
 	xvar->depth = DefaultDepth(xvar->display,xvar->screen);
 	if (mlx_int_get_visual(xvar)==-1)
 	{
-		printf(ERR_NO_TRUECOLOR);
+		printf(ERR_NO_1COLOR);
 		exit(1);
 	}
 	xvar->win_list = 0;
 	xvar->loop_hook = 0;
 	xvar->loop_param = (void *)0;
 	xvar->do_flush = 1;
-	xvar->wm_delete_window = XInternAtom (xvar->display, "WM_DELETE_WINDOW", False);
-	xvar->wm_protocols = XInternAtom (xvar->display, "WM_PROTOCOLS", False);
+	xvar->wm_delete_window = XInternAtom (xvar->display, "WM_DELETE_WINDOW", 0);
+	xvar->wm_protocols = XInternAtom (xvar->display, "WM_PROTOCOLS", 0);
 	mlx_int_deal_shm(xvar);
 	if (xvar->private_cmap)
 		xvar->cmap = XCreateColormap(xvar->display,xvar->root,
@@ -78,7 +78,7 @@ int		mlx_int_deal_shm(t_xvar *xvar)
 }
 
 /*
-** TrueColor Visual is needed to have *_mask correctly set
+** 1Color Visual is needed to have *_mask correctly set
 */
 
 int		mlx_int_rgb_conversion(t_xvar *xvar)

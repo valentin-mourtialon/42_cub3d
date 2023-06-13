@@ -6,13 +6,13 @@
 /*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 14:01:18 by valentin          #+#    #+#             */
-/*   Updated: 2023/06/13 14:30:48 by valentin         ###   ########.fr       */
+/*   Updated: 2023/06/13 15:44:13 by valentin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <cub3d.h>
 
-static char	*get_texture_path(char *line, int j)
+static char	*get_texture_path(char *line, int y)
 {
 	char	*path;
 	int		len;
@@ -26,7 +26,7 @@ static char	*get_texture_path(char *line, int j)
 	path = malloc(sizeof(char) * (len - y + 1));
 	if (!path)
 		return (NULL);
-	i = 0;
+	x = 0;
 	while (line[y] && !is_space(line[y], INCLUDE_LINE_BREAK))
 		path[x++] = line[y++];
 	path[x] = '\0';

@@ -6,25 +6,25 @@
 /*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 19:57:05 by valentin          #+#    #+#             */
-/*   Updated: 2023/06/12 20:00:44 by valentin         ###   ########.fr       */
+/*   Updated: 2023/06/13 15:36:47 by valentin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <cub3d.h>
 
-void	init_textures_infos(t_texinfo *textures)
+void	init_textures_infos(t_textures_infos *textures_infos)
 {
-	textures->north = NULL;
-	textures->south = NULL;
-	textures->west = NULL;
-	textures->east = NULL;
-	textures->floor = 0;
-	textures->ceiling = 0;
-	/*textures->hex_floor = 0x0;
-	textures->hex_ceiling = 0x0;
-	textures->size = TEX_SIZE;
-	textures->step = 0.0;
-	textures->pos = 0.0;
-	textures->x = 0;
-	textures->y = 0;*/
+	textures_infos->NO = NULL;
+	textures_infos->SO = NULL;
+	textures_infos->WE = NULL;
+	textures_infos->EA = NULL;
+	textures_infos->F = 0;
+	textures_infos->C = 0;
+	/*textures_infos_infos->hex_floor = 0x0;
+	textures_infos->hex_ceiling = 0x0;
+	textures_infos->size = TEX_SIZE;
+	textures_infos->step = 0.0;
+	textures_infos->pos = 0.0;
+	textures_infos->x = 0;
+	textures_infos->y = 0;*/
 }
