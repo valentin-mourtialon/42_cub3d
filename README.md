@@ -12,7 +12,8 @@ See `main` branch for the project's Readme.
 	- extract_parts (parser/input_parse.c)
 	- cardinals_textures (parser/textures_cardinals.c)
 	- colors_textures (parser/textures_colors.c)
-	- **WIP**: create_map
+	- create_map (parser/map_create.c)
+5. **WIP** check_map (parser/map_check.c)
 
 # TODO
 
