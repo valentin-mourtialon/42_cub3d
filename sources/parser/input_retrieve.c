@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   retrieve_input.c                                   :+:      :+:    :+:   */
+/*   input_retrieve.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 15:28:27 by valentin          #+#    #+#             */
-/*   Updated: 2023/06/12 18:53:00 by valentin         ###   ########.fr       */
+/*   Updated: 2023/06/14 11:17:38 by valentin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ static int	fill_filetab(t_data *data)
 	{
 		data->input_infos.filetab[x] = calloc(ft_strlen(line) + 1, sizeof(char));
 		if (data->input_infos.filetab[x] == NULL)
-			return (free_tab((void **)data->input_infos.filetab), printf("\nKO\n"), 0);
+			return (free_tab((void **)data->input_infos.filetab), 0);
 		while (line[i] != '\0')
 			data->input_infos.filetab[x][y++] = line[i++];
 		data->input_infos.filetab[x++][y] = '\0';

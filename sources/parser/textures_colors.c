@@ -6,7 +6,7 @@
 /*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 14:28:47 by valentin          #+#    #+#             */
-/*   Updated: 2023/06/13 15:44:57 by valentin         ###   ########.fr       */
+/*   Updated: 2023/06/14 11:42:15 by valentin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,13 +68,13 @@ int	colors_textures(t_data *data, t_textures_infos *textures_infos, char *line, 
 	{
 		textures_infos->C = set_rgb_colors(line + y + 1);
 		if (textures_infos->C == 0)
-			return (ERROR);
+			return (printf("-- C : y = %i --\n", y), ERROR);
 	}
 	else if (!textures_infos->F && line[y] == 'F')
 	{
 		textures_infos->F = set_rgb_colors(line + y + 1);
 		if (textures_infos->F == 0)
-			return (ERROR);
+			return (printf("-- F : y = %i --\n", y), ERROR);
 	}
 	else
 		return (ERROR);

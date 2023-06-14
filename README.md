@@ -19,4 +19,4 @@ See `main` branch for the project's Readme.
 1. Implement `.d` for the compilation
 2. Write additional tests for the function `check_input`
 3. Write tests for the function `retrieve_input` which goal is to put the file content into the `data.filetab` tab
-4. Write tests for the function `extract_parts`.
+4. Write tests for the function `extract_parts` and `parse`
