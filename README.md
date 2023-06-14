@@ -13,7 +13,8 @@ See `main` branch for the project's Readme.
 	- cardinals_textures (parser/textures_cardinals.c)
 	- colors_textures (parser/textures_colors.c)
 	- create_map (parser/map_create.c)
-5. **WIP** check_map (parser/map_check.c && parser/map_borders_check.c)
+5. check_map (parser/map_check.c && parser/map_borders_check.c)
+6. **WIP** check_textures (parser/textures_check.c)
 
 # TODO
 
@@ -21,3 +22,4 @@ See `main` branch for the project's Readme.
 2. Write additional tests for the function `check_input`
 3. Write tests for the function `retrieve_input` which goal is to put the file content into the `data.filetab` tab
 4. Write tests for the function `extract_parts` and `parse`
+5. Write all the tests for the `check_map` function.
