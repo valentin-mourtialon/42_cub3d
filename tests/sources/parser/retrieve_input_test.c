@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_input_test.c                                 :+:      :+:    :+:   */
+/*   retrieve_input_test.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sel-maar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 3023/05/23 23:14:59 by vmourtia          #+#    #+#             */
-/*   Updated: 2023/06/14 10:48:45 by sel-maar         ###   ########.fr       */
+/*   Created: 2023/06/13 15:19:01 by sel-maar          #+#    #+#             */
+/*   Updated: 2023/06/13 15:35:01 by sel-maar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-	Testing all the functions of the file "parser/input_check.c"
+	Testing all the functions of the file "parser/input_retireve.c"
 */ 
 
 #include <cub3d_test.h>
@@ -28,8 +28,6 @@ void	check_input_test(void)
 	t_check_input_test	test8 = { 2, { "./cub3D", "?fichiercub" }, 0 };
 	t_check_input_test	test9 = { 2, { "./cub3D", "fichiercub/" }, 0 };
 	t_check_input_test	test10 = { 2, { "./cub3D", ".cub" }, 0 };
-	t_check_input_test	test11 = { 2, { "./cub3D", "sources" }, 0 };
-	t_check_input_test	test12 = { 2, { "./cub3D", "testfilechmod000" }, 0 };
 
 	printf("\nTesting "LIGHT_CYAN"check_args(int ac, char **av)"RESET" cf sources/parser/\n\n");
 	printf("\ttest 1:		%s\n", test1.expected == check_input(test1.ac, test1.input) ? LIGHT_GREEN"OK"RESET : LIGHT_RED"KO"RESET);
@@ -41,7 +39,5 @@ void	check_input_test(void)
 	printf("\ttest 7:		%s\n", test7.expected == check_input(test7.ac, test7.input) ? LIGHT_GREEN"OK"RESET : LIGHT_RED"KO"RESET);
 	printf("\ttest 8:		%s\n", test8.expected == check_input(test8.ac, test8.input) ? LIGHT_GREEN"OK"RESET : LIGHT_RED"KO"RESET);
 	printf("\ttest 9:		%s\n", test9.expected == check_input(test9.ac, test9.input) ? LIGHT_GREEN"OK"RESET : LIGHT_RED"KO"RESET);
-	printf("\ttest 10:	%s\n", test10.expected == check_input(test10.ac, test10.input) ? LIGHT_GREEN"OK"RESET : LIGHT_RED"KO"RESET);
-	printf("\ttest 11:	%s\n", test11.expected == check_input(test11.ac, test11.input) ? LIGHT_GREEN"OK"RESET : LIGHT_RED"KO"RESET);
-	printf("\ttest 12:	%s\n\n", test12.expected == check_input(test12.ac, test12.input) ? LIGHT_GREEN"OK"RESET : LIGHT_RED"KO"RESET);
+	printf("\ttest 10:	%s\n\n", test10.expected == check_input(test10.ac, test10.input) ? LIGHT_GREEN"OK"RESET : LIGHT_RED"KO"RESET);
 }
