@@ -6,7 +6,7 @@
 #    By: valentin <valentin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/22 12:40:08 by sel-maar          #+#    #+#              #
-#    Updated: 2023/06/13 16:52:15 by valentin         ###   ########.fr        #
+#    Updated: 2023/06/14 15:04:21 by valentin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,6 +39,7 @@ SRCS_FILES =	cub3d.c \
 				parser/input_check.c \
 				parser/input_retrieve.c \
 				parser/input_parse.c \
+				parser/map_create.c \
 				parser/textures_cardinals.c \
 				parser/textures_colors.c \
 				parser/parser_utils.c \

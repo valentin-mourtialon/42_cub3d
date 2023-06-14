@@ -6,7 +6,7 @@
 /*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 12:13:08 by sel-maar          #+#    #+#             */
-/*   Updated: 2023/06/14 12:31:24 by valentin         ###   ########.fr       */
+/*   Updated: 2023/06/14 15:13:13 by valentin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,8 +119,10 @@ int		retrieve_input(char *filepath, t_data *data);
 int		cardinals_textures(t_textures_infos *textures_infos, char *line, int y);
 int		colors_textures(t_data *data, t_textures_infos *textures_infos, char *line, int y);
 int		parse(t_data *data, char **filetab);
+int		create_map(t_data *data, char **filetab, int x);
 int		is_space(char c, int include_line_break);
 void	skip_spaces(char **filetab, int x, int *y);
+int		longest_line_length(t_input_infos *input_infos, int start_index);
 
 /******************************************************************************/
 /*                                                                            */
