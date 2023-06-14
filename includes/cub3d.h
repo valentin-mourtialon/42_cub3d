@@ -6,7 +6,7 @@
 /*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 12:13:08 by sel-maar          #+#    #+#             */
-/*   Updated: 2023/06/14 15:13:13 by valentin         ###   ########.fr       */
+/*   Updated: 2023/06/14 17:16:24 by valentin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,20 @@ typedef struct s_input_infos {
 	int			index_end_of_map;
 }	t_input_infos;
 
+typedef struct s_player {
+	char	dir;
+	double	pos_x;
+	double	pos_y;
+	double	dir_x;
+	double	dir_y;
+	double	plane_x;
+	double	plane_y;
+	int		has_moved;
+	int		move_x;
+	int		move_y;
+	int		rotate;
+}	t_player;
+
 typedef struct s_data {
 	void				*mlx;
 	void				*win;
@@ -96,6 +110,7 @@ typedef struct s_data {
 	char				**map;
 	t_textures_infos	textures_infos;
 	t_input_infos		input_infos;
+	t_player			player;
 }	t_data;
 
 /******************************************************************************/
@@ -107,6 +122,7 @@ typedef struct s_data {
 void	init_data(t_data *data);
 void	init_input_infos(t_input_infos *input_infos);
 void	init_textures_infos(t_textures_infos *textures_infos);
+void	init_player(t_player *player);
 
 /******************************************************************************/
 /*                                                                            */
@@ -120,6 +136,8 @@ int		cardinals_textures(t_textures_infos *textures_infos, char *line, int y);
 int		colors_textures(t_data *data, t_textures_infos *textures_infos, char *line, int y);
 int		parse(t_data *data, char **filetab);
 int		create_map(t_data *data, char **filetab, int x);
+int		check_map(t_data *data, char **map);
+int		check_map_sides(t_input_infos *infos, char **map);
 int		is_space(char c, int include_line_break);
 void	skip_spaces(char **filetab, int x, int *y);
 int		longest_line_length(t_input_infos *input_infos, int start_index);

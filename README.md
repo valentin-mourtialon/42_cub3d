@@ -13,7 +13,7 @@ See `main` branch for the project's Readme.
 	- cardinals_textures (parser/textures_cardinals.c)
 	- colors_textures (parser/textures_colors.c)
 	- create_map (parser/map_create.c)
-5. **WIP** check_map (parser/map_check.c)
+5. **WIP** check_map (parser/map_check.c && parser/map_borders_check.c)
 
 # TODO
 

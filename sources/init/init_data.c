@@ -6,7 +6,7 @@
 /*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 17:54:02 by valentin          #+#    #+#             */
-/*   Updated: 2023/06/13 15:36:31 by valentin         ###   ########.fr       */
+/*   Updated: 2023/06/14 17:00:33 by valentin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	init_data(t_data *data)
 	data->win = NULL;
 	data->win_height = WIN_HEIGHT;
 	data->win_width = WIN_WIDTH;
-	/*init_player(&data->player);*/
+	init_player(&data->player);
 	init_textures_infos(&data->textures_infos);
 	data->map = NULL;
 	init_input_infos(&data->input_infos);
