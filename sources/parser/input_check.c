@@ -6,7 +6,7 @@
 /*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 11:50:41 by sel-maar          #+#    #+#             */
-/*   Updated: 2023/06/13 14:28:31 by valentin         ###   ########.fr       */
+/*   Updated: 2023/06/13 16:04:48 by valentin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static int	is_directory(char *arg)
 	return (0);
 }
 
-static t_bool	is_valid_char(char c)
+static int	is_valid_char(char c)
 {
 	char	*invalid_set;
 
@@ -30,13 +30,13 @@ static t_bool	is_valid_char(char c)
 	while (*invalid_set)
 	{
 		if (c == *invalid_set)
-			return (false);
+			return (0);
 		invalid_set++;
 	}
-	return (true);
+	return (1);
 }
 
-static t_bool	is_valid_filename(char *filename)
+static int	is_valid_filename(char *filename)
 {
 	int	i;
 
@@ -44,10 +44,10 @@ static t_bool	is_valid_filename(char *filename)
 	while (filename[i])
 	{
 		if (!is_valid_char(filename[i]))
-			return (false);
+			return (0);
 		i++;
 	}
-	return (true);
+	return (1);
 }
 
 /*

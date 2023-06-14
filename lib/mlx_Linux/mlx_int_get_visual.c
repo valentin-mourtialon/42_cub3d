@@ -17,7 +17,6 @@
 ** We need a private colormap for non-default Visual.
 */
 
-
 int		mlx_int_get_visual(t_xvar *xvar)
 {
   XVisualInfo	*vi;

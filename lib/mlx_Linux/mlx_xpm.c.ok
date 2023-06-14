@@ -241,7 +241,7 @@ void	*mlx_int_parse_xpm(t_xvar *xvar,void *info,int info_size,char *(*f)())
       xgcv.plane_mask = AllPlanes;
       img->gc = XCreateGC(xvar->display, xvar->root, GCClipMask|GCFunction|
 			  GCPlaneMask, &xgcv);
-      XSync(xvar->display, False);
+      XSync(xvar->display, 0);
       XDestroyImage(clip_img);
     }
   if (colors)

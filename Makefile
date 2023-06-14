@@ -6,7 +6,7 @@
 #    By: valentin <valentin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/22 12:40:08 by sel-maar          #+#    #+#              #
-#    Updated: 2023/06/13 14:11:23 by valentin         ###   ########.fr        #
+#    Updated: 2023/06/13 16:52:15 by valentin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,7 +62,7 @@ SRCS = 			${addprefix ${SRCS_PATH}, ${SRCS_FILES}}
 #                                                                              #
 ################################################################################
 
-MLX =			-L./lib/mlx_Linux -L/usr/lib -lmlx_Linux -lXext -lX11 -lm -lz 
+MLX =			-L./lib/mlx_Linux -L/usr/lib -lmlx_Linux -lXext -lX11 -lm -lz
 LIBFT =			-L./lib/std_libft -lstd_libft
 GNL =			-L./lib/gnl -lgnl
 
@@ -121,13 +121,13 @@ ${NAME_LIB}: make_mlx
 ################################################################################
 
 make_mlx: make_gnl
-				@${MAKE} -s -C ./lib/std_libft 2> logs/make_libft_logs.txt 
+				@${MAKE} -s -C ./lib/mlx_Linux 2> logs/make_mlx_logs.txt 
 
 make_gnl: make_libft
 				@${MAKE} -s -C ./lib/gnl 2> logs/make_gnl_logs.txt
 
 make_libft: cub3D_logs
-				@${MAKE} -s -C ./lib/mlx_Linux 2> logs/make_mlx_logs.txt 
+				@${MAKE} -s -C ./lib/std_libft 2> logs/make_libft_logs.txt 
 
 cub3D_logs: success_o2c_files
 				@mkdir -p logs
