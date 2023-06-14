@@ -23,3 +23,10 @@ See `main` branch for the project's Readme.
 3. Write tests for the function `retrieve_input` which goal is to put the file content into the `data.filetab` tab
 4. Write tests for the function `extract_parts` and `parse`
 5. Write all the tests for the `check_map` function.
+
+# Do not forget !
+
+1. Compilation add `.d`
+2. Compilation: do not display useless message when files have already been compiled ! People would think the Makefile is 'relinking'...
+3. Issue to solve: INVALID_TEXTURE. The initial player position is taken into account (and we don't want that at this stage): File `input_parse`.
+4. Border left side of the map has to be checked !
