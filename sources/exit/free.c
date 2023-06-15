@@ -6,7 +6,7 @@
 /*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 11:10:13 by vmourtia          #+#    #+#             */
-/*   Updated: 2023/06/13 15:45:31 by valentin         ###   ########.fr       */
+/*   Updated: 2023/06/14 15:38:50 by valentin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,6 @@ void	free_data(t_data *data)
 		close(data->input_infos.fd);
 	if (data->input_infos.filetab)
 		free_tab((void **)data->input_infos.filetab);
-	/*if (data->map)
-		free_tab((void **)data->map);*/
+	if (data->map)
+		free_tab((void **)data->map);
 }

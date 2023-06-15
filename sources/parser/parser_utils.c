@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parsing_utils.c                                    :+:      :+:    :+:   */
+/*   parser_utils.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 13:54:11 by valentin          #+#    #+#             */
-/*   Updated: 2023/06/13 13:55:36 by valentin         ###   ########.fr       */
+/*   Updated: 2023/06/14 15:36:42 by valentin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,20 @@ int	is_space(char c, int include_line_break)
 		return (c == ' ' || c == '\t' || c == '\n');
 	else
 		return (c == ' ' || c == '\t');
+}
+
+int	longest_line_length(t_input_infos *input_infos, int start_index)
+{
+	int	longest_length;
+	int	x;
+
+	x = start_index;
+	longest_length = ft_strlen(input_infos->filetab[x]);
+	while (input_infos->filetab[x])
+	{
+		if (ft_strlen(input_infos->filetab[x]) > longest_length)
+			longest_length = ft_strlen(input_infos->filetab[x]);
+		x++;
+	}
+	return (longest_length);
 }

@@ -6,11 +6,7 @@
 #    By: valentin <valentin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/22 12:40:08 by sel-maar          #+#    #+#              #
-<<<<<<< HEAD
-#    Updated: 2023/06/13 16:52:15 by valentin         ###   ########.fr        #
-=======
-#    Updated: 2023/06/12 13:23:34 by valentin         ###   ########.fr        #
->>>>>>> origin
+#    Updated: 2023/06/15 15:54:00 by sel-maar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,9 +36,13 @@ SRCS_FILES =	cub3d.c \
 				init/init_data.c \
 				init/init_input_infos.c \
 				init/init_textures_infos.c \
+				init/init_player.c \
 				parser/input_check.c \
 				parser/input_retrieve.c \
 				parser/input_parse.c \
+				parser/map_create.c \
+				parser/map_check.c \
+				parser/map_borders_check.c \
 				parser/textures_cardinals.c \
 				parser/textures_colors.c \
 				parser/parser_utils.c \
@@ -89,11 +89,8 @@ ${OBJS_PATH}%.o: %.c
 clean:
 				@${MAKE} clean -s -C ./lib/mlx_Linux
 				@${MAKE} clean -s -C ./lib/std_libft
-<<<<<<< HEAD
 				@${MAKE} clean -s -C ./lib/gnl
 				@${MAKE} clean -s -C ./tests
-=======
->>>>>>> origin
 				@${RM} ${OBJS_PATH} logs
 
 fclean: clean
@@ -104,6 +101,22 @@ re:
 				@${MAKE} all -s
 
 .PHONY: all clean fclean re
+
+################################################################################
+#                                                                              #
+#                                  tests                                       #
+#                                                                              #
+################################################################################
+
+test: test_title make_cublib
+				@./test 2>> logs/test_logs.txt
+				@echo "${BOLD}Find test logs in logs/test_logs.txt\n\n${RESET}"
+
+make_cublib: ${NAME_LIB}
+				@${MAKE} -s -C ./tests/
+
+${NAME_LIB}: make_mlx
+				@ar -r ${NAME_LIB} ${OBJS} 2> logs/make_test_logs.txt
 
 ################################################################################
 #                                                                              #
@@ -138,6 +151,19 @@ title:
 				@echo "${BLUE}    ██║░░██╗██║░░░██║██╔══██╗░╚═══██╗██║░░██║    ${RESET}"
 				@echo "${BLUE}    ╚█████╔╝╚██████╔╝██████╦╝██████╔╝██████╔╝    ${RESET}"
 				@echo "${BLUE}    ░╚════╝░░╚═════╝░╚═════╝░╚═════╝░╚═════╝░    ${RESET}"
+				@echo
+				@echo
+
+test_title:
+				@${CLEAR}
+				@echo
+				@echo
+				@echo "${LIGHT_CYAN}    ████████╗███████╗░██████╗████████╗    ${RESET}"
+				@echo "${LIGHT_CYAN}    ╚══██╔══╝██╔════╝██╔════╝╚══██╔══╝    ${RESET}"
+				@echo "${LIGHT_CYAN}    ░░░██║░░░█████╗░░╚█████╗░░░░██║░░░    ${RESET}"
+				@echo "${LIGHT_CYAN}    ░░░██║░░░██╔══╝░░░╚═══██╗░░░██║░░░    ${RESET}"
+				@echo "${LIGHT_CYAN}    ░░░██║░░░███████╗██████╔╝░░░██║░░░    ${RESET}"
+				@echo "${LIGHT_CYAN}    ░░░╚═╝░░░╚══════╝╚═════╝░░░░╚═╝░░░    ${RESET}"
 				@echo
 				@echo
 
