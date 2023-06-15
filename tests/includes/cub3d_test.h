@@ -6,7 +6,7 @@
 /*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 13:58:40 by vmourtia          #+#    #+#             */
-/*   Updated: 2023/06/13 14:17:54 by valentin         ###   ########.fr       */
+/*   Updated: 2023/06/15 15:23:23 by sel-maar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,13 @@ typedef struct s_check_input_test
 		int		expected;
 }	t_check_input_test;
 
+typedef struct s_retrieve_input_test
+{
+		char	*input;
+		int		expected[2];
+}	t_retrieve_input_test;
+
 void	check_input_test(void);
+void	retrieve_input_test(void);
 
 #endif

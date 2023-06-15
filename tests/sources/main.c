@@ -6,7 +6,7 @@
 /*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 13:55:52 by vmourtia          #+#    #+#             */
-/*   Updated: 2023/06/13 14:19:57 by valentin         ###   ########.fr       */
+/*   Updated: 2023/06/15 15:10:23 by sel-maar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,6 @@
 int	main(void)
 {
 	check_input_test();
+	retrieve_input_test();
 	return (0);
 }

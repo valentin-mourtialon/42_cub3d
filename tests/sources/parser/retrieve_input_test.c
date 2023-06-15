@@ -1,12 +1,9 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   retrieve_input_test.c                              :+:      :+:    :+:   */
+/* ************************************************************************** */ /*                                                                            */ /*                                                        :::      ::::::::   */ /*   retrieve_input_test.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sel-maar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 15:19:01 by sel-maar          #+#    #+#             */
-/*   Updated: 2023/06/13 15:35:01 by sel-maar         ###   ########.fr       */
+/*   Updated: 2023/06/14 12:04:36 by sel-maar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,28 +13,20 @@
 
 #include <cub3d_test.h>
 
-void	check_input_test(void)
+void	retrieve_input_test(void)
 {
-	t_check_input_test	test1 = { 2, { "./cub3D", "fichier.cub" }, 1 };
-	t_check_input_test	test2 = { 3, { "./cub3D", "fichier.cub" }, 0 };
-	t_check_input_test	test3 = { 2, { "./cub3D", "fichier.cu" }, 0 };
-	t_check_input_test	test4 = { 2, { "./cub3D", "fichier.cu b" }, 0 };
-	t_check_input_test	test5 = { 2, { "./cub3D", "fichier.cube" }, 0 };
-	t_check_input_test	test6 = { 2, { "./cub3D", "fichiercub" }, 0 };
-	t_check_input_test	test7 = { 2, { "./cub3D", "" }, 0 };
-	t_check_input_test	test8 = { 2, { "./cub3D", "?fichiercub" }, 0 };
-	t_check_input_test	test9 = { 2, { "./cub3D", "fichiercub/" }, 0 };
-	t_check_input_test	test10 = { 2, { "./cub3D", ".cub" }, 0 };
+	t_data data[10];
 
-	printf("\nTesting "LIGHT_CYAN"check_args(int ac, char **av)"RESET" cf sources/parser/\n\n");
-	printf("\ttest 1:		%s\n", test1.expected == check_input(test1.ac, test1.input) ? LIGHT_GREEN"OK"RESET : LIGHT_RED"KO"RESET);
-	printf("\ttest 2:		%s\n", test2.expected == check_input(test2.ac, test2.input) ? LIGHT_GREEN"OK"RESET : LIGHT_RED"KO"RESET);
-	printf("\ttest 3:		%s\n", test3.expected == check_input(test3.ac, test3.input) ? LIGHT_GREEN"OK"RESET : LIGHT_RED"KO"RESET);
-	printf("\ttest 4:		%s\n", test4.expected == check_input(test4.ac, test4.input) ? LIGHT_GREEN"OK"RESET : LIGHT_RED"KO"RESET);
-	printf("\ttest 5:		%s\n", test5.expected == check_input(test5.ac, test5.input) ? LIGHT_GREEN"OK"RESET : LIGHT_RED"KO"RESET);
-	printf("\ttest 6:		%s\n", test6.expected == check_input(test6.ac, test6.input) ? LIGHT_GREEN"OK"RESET : LIGHT_RED"KO"RESET);
-	printf("\ttest 7:		%s\n", test7.expected == check_input(test7.ac, test7.input) ? LIGHT_GREEN"OK"RESET : LIGHT_RED"KO"RESET);
-	printf("\ttest 8:		%s\n", test8.expected == check_input(test8.ac, test8.input) ? LIGHT_GREEN"OK"RESET : LIGHT_RED"KO"RESET);
-	printf("\ttest 9:		%s\n", test9.expected == check_input(test9.ac, test9.input) ? LIGHT_GREEN"OK"RESET : LIGHT_RED"KO"RESET);
-	printf("\ttest 10:	%s\n\n", test10.expected == check_input(test10.ac, test10.input) ? LIGHT_GREEN"OK"RESET : LIGHT_RED"KO"RESET);
+	t_retrieve_input_test	test1 = { "../maps/valid/subject.cub", {1, 21} };
+	t_retrieve_input_test	test2 = { "../maps/valid/mapstest.cub", {1, 34} };
+	t_retrieve_input_test	test3 = { "../maps/nonvalid/biglinemap.cub", {1, 5733} };
+	t_retrieve_input_test	test4 = { "../maps/nonvalid/emptymap.cub", {1, 0} };
+	t_retrieve_input_test	test5 = { "../maps/valid/tinymap.cub", {1, 11} };
+
+	printf("\nTesting "LIGHT_CYAN"retrieve_inputs(char *pathfile, t_data data)"RESET" cf sources/parser/\n\n");
+	printf("\ttest 1:		%s\n", (test1.expected[1] == retrieve_input(test1.input, &data[0]) && test1.expected[1] == data[0].input_infos.nb_of_lines )? LIGHT_GREEN"OK"RESET : LIGHT_RED"KO"RESET);
+	printf("\ttest 2:		%s\n", (test2.expected[1] == retrieve_input(test2.input, &data[1]) && test1.expected[1] == data[1].input_infos.nb_of_lines )? LIGHT_GREEN"OK"RESET : LIGHT_RED"KO"RESET);
+	printf("\ttest 3:		%s\n", (test3.expected[1] == retrieve_input(test3.input, &data[2]) && test1.expected[1] == data[2].input_infos.nb_of_lines )? LIGHT_GREEN"OK"RESET : LIGHT_RED"KO"RESET);
+	printf("\ttest 4:		%s\n", (test4.expected[1] == retrieve_input(test4.input, &data[3]) && test1.expected[1] == data[3].input_infos.nb_of_lines )? LIGHT_GREEN"OK"RESET : LIGHT_RED"KO"RESET);
+	printf("\ttest 5:		%s\n", (test5.expected[1] == retrieve_input(test5.input, &data[4]) && test1.expected[1] == data[4].input_infos.nb_of_lines )? LIGHT_GREEN"OK"RESET : LIGHT_RED"KO"RESET);
 }
