@@ -6,7 +6,7 @@
 /*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 12:13:08 by sel-maar          #+#    #+#             */
-/*   Updated: 2023/06/13 16:58:23 by valentin         ###   ########.fr       */
+/*   Updated: 2023/06/15 15:14:43 by sel-maar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 /******************************************************************************/
 
 # include <mlx.h>
-# include <get_next_line.h>
+//# include <get_next_line.h>
 # include <libft.h>
 # include <errno.h>
 # include <string.h>
