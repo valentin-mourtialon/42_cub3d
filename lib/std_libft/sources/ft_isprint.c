@@ -6,13 +6,13 @@
 /*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 15:25:57 by valentin          #+#    #+#             */
-/*   Updated: 2023/06/14 11:36:49 by valentin         ###   ########.fr       */
+/*   Updated: 2023/06/26 09:51:09 by valentin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isprint(int c)
 {
-	if (33 <= c && c < 127)
+	if (c >= 33 && c < 127)
 		return (1);
 	else
 		return (0);

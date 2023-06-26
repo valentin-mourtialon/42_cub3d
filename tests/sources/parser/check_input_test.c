@@ -6,7 +6,7 @@
 /*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 3023/05/23 23:14:59 by vmourtia          #+#    #+#             */
-/*   Updated: 2023/06/14 10:48:45 by sel-maar         ###   ########.fr       */
+/*   Updated: 2023/06/26 09:26:42 by valentin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 void	check_input_test(void)
 {
-	t_check_input_test	test1 = { 2, { "./cub3D", "fichier.cub" }, 1 };
+	t_check_input_test	test1 = { 2, { "./cub3D", "maps/valid/subject.cub" }, 1 };
 	t_check_input_test	test2 = { 3, { "./cub3D", "fichier.cub" }, 0 };
 	t_check_input_test	test3 = { 2, { "./cub3D", "fichier.cu" }, 0 };
 	t_check_input_test	test4 = { 2, { "./cub3D", "fichier.cu b" }, 0 };

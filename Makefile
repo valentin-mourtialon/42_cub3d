@@ -6,7 +6,7 @@
 #    By: valentin <valentin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/22 12:40:08 by sel-maar          #+#    #+#              #
-#    Updated: 2023/06/15 15:54:00 by sel-maar         ###   ########.fr        #
+#    Updated: 2023/06/26 11:31:55 by valentin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ NAME_LIB =		libcub3D.a
 
 CC =			cc
 
-CFLAGS =		-Wall -Werror -Wextra -g3
+CFLAGS =		-Wall -Werror -Wextra -g
 
 INCLUDES = 		-I/usr/include -I./includes -I./lib/mlx_Linux -I./lib/std_libft/includes -I./lib/gnl/includes
 
@@ -84,7 +84,7 @@ ${NAME}: make_mlx
 
 ${OBJS_PATH}%.o: %.c
 				@mkdir -p ${dir $@}
-				@${CC} ${INCLUDES} -O3 -c $< -o $@
+				@${CC} ${INCLUDES} -c $< -o $@
 
 clean:
 				@${MAKE} clean -s -C ./lib/mlx_Linux

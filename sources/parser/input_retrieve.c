@@ -6,7 +6,7 @@
 /*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 15:28:27 by valentin          #+#    #+#             */
-/*   Updated: 2023/06/15 15:55:56 by sel-maar         ###   ########.fr       */
+/*   Updated: 2023/06/26 12:17:02 by valentin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,12 @@ static int	fill_filetab(t_data *data)
 		if (data->input_infos.filetab[x] == NULL)
 			return (free_tab((void **)data->input_infos.filetab), 0);
 		while (line[i] != '\0')
+		{
+			//printf("%d", data->input_infos.filetab[x][y]);
 			data->input_infos.filetab[x][y++] = line[i++];
+		}	
 		data->input_infos.filetab[x++][y] = '\0';
+		//printf("\nx = %d | y = %d", x, y);
 		y = 0;
 		i = 0;
 		free(line);
@@ -63,6 +67,7 @@ int	retrieve_input(char *filepath, t_data *data)
 {
 	data->input_infos.nb_of_lines = count_lines(filepath);
 	data->input_infos.filepath = filepath;
+	printf("\nNb of lines = %d\n", data->input_infos.nb_of_lines);
 	data->input_infos.filetab = calloc(data->input_infos.nb_of_lines + 1, sizeof(char *));
 	if (data->input_infos.filetab == NULL)
 		return (0);

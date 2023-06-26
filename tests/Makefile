@@ -6,7 +6,7 @@
 #    By: valentin <valentin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/01 14:10:48 by vmourtia          #+#    #+#              #
-#    Updated: 2023/06/15 15:17:31 by sel-maar         ###   ########.fr        #
+#    Updated: 2023/06/26 09:22:22 by valentin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC =			cc
 
 CFLAGS =		-Wall -Wextra -Werror
 
-INCLUDES =		-I./includes -I../includes -I../lib/mlx_Linux -I../lib/std_libft/includes
+INCLUDES =		-I./includes -I../includes -I../lib/mlx_Linux -I../lib/std_libft/includes -I../lib/gnl/includes
 
 SRCS_FILES =	parser/check_input_test.c \
 				parser/retrieve_input_test.c \
@@ -40,10 +40,12 @@ LIBFT =			-L../lib/std_libft -lstd_libft
 
 MLX =			-L../lib/mlx_Linux/ -lmlx_Linux 
 
+GNL =			-L../lib/gnl/ -lgnl 
+
 all: ${NAME}
 
 ${NAME}: ${OBJS}
-				@${CC} ${CFLAGS} ${OBJS} ${CUB} ${LIBFT} ${MLX} -o ../${NAME}
+				@${CC} ${CFLAGS} ${OBJS} ${CUB} ${LIBFT} ${GNL} ${MLX} -o ../${NAME}
 				@chmod 000 testfilechmod000
 
 ${OBJS_PATH}%.o: %.c
