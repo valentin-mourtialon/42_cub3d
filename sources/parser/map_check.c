@@ -6,7 +6,7 @@
 /*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 16:40:53 by valentin          #+#    #+#             */
-/*   Updated: 2023/06/26 12:08:55 by valentin         ###   ########.fr       */
+/*   Updated: 2023/06/26 15:36:00 by valentin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ static int	check_player_position(t_data *data, char **map)
 	x = 0;
 	while (map[x])
 	{
-		x = 0;
+		y = 0;
 		while (map[x][y])
 		{
 			if (ft_strchr("NSEW", map[x][y]))

@@ -6,7 +6,7 @@
 /*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 15:03:32 by valentin          #+#    #+#             */
-/*   Updated: 2023/06/26 12:11:35 by valentin         ###   ########.fr       */
+/*   Updated: 2023/06/26 15:38:08 by valentin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ static int	count_map_lines(t_data *data, char **filetab, int x)
 		x++;
 	}
 	data->input_infos.index_end_of_map = x;
-	//printf("\nnb map lines = %d\n", x - start_map_index);
 	return (x - start_map_index);
 }
 
@@ -38,9 +37,6 @@ static int	fill_map(t_input_infos *input_infos, char **map, int file_index)
 	int		y;
 
 	input_infos->width = longest_line_length(input_infos, file_index);
-	printf("\nLongest line length = %d\n", input_infos->width);
-	printf("\nfile_index = %d\n", file_index);
-	printf("\nHeight = %d\n", input_infos->height);
 	x = 0;
 	while (x < input_infos->height)
 	{
@@ -52,19 +48,15 @@ static int	fill_map(t_input_infos *input_infos, char **map, int file_index)
 		{
 			map[x][y] = input_infos->filetab[file_index][y];
 			y++;
-			//printf("\ny = %d", y);
 		}	
-		printf("\nx = %d | y = %d", x, y);
 		while (y < input_infos->width)
 		{
 			map[x][y++] = '\0';
-			printf("-");
 		}
 		x++;
 		file_index++;
 	}
 	map[x] = NULL;
-	printf("\nlast x = %d | last y = %d\n", x, y);
 	return (SUCCESS);
 }
 
@@ -90,16 +82,13 @@ static void	fill_spaces(t_data *data)
 		y = 0;
 		while (is_space(data->map[x][y], 0))
 			y++;
-		printf("\nx = %d | y = %d", x, y);
 		while (data->map[x][++y])
 		{
-			printf("\n\tx = %d | y = %d", x, y);
 			if (data->map[x][y] == ' ' && y != data->map[x][ft_strlen(data->map[x]) - 1])
 				data->map[x][y] = '1';
 		}
 		x++;
 	}
-	printf("\nlast x = %d | last y = %d", x, y);
 }
 
 int	create_map(t_data *data, char **filetab, int x)

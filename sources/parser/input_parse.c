@@ -6,7 +6,7 @@
 /*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 20:02:20 by valentin          #+#    #+#             */
-/*   Updated: 2023/06/26 12:07:01 by valentin         ###   ########.fr       */
+/*   Updated: 2023/06/26 15:38:39 by valentin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ static int	extract_parts(t_data *data, char **filetab, int x, int y)
 	{
 		if (create_map(data, filetab, x) == FAILURE)
 			return (printf("INVALID MAP\n"), FAILURE);
-		//printf("\nOK\n");
 		return (SUCCESS);
 	}
 	return (CONTINUE);
