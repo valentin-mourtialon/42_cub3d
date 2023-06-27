@@ -6,7 +6,7 @@
 /*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 14:01:18 by valentin          #+#    #+#             */
-/*   Updated: 2023/06/14 12:36:25 by valentin         ###   ########.fr       */
+/*   Updated: 2023/06/27 15:41:09 by valentin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static char	*get_texture_path(char *line, int y)
 int	cardinals_textures(t_textures_infos *textures_infos, char *line, int y)
 {
 	if (line[y + 2] && ft_isprint(line[y + 2]))
-		return (printf("\n-- ERROR : y = %i : line = %s", y, line), ERROR);
+		return (ERROR);
 	if (line[y] == 'N' && line[y + 1] == 'O' && !(textures_infos->NO))
 		textures_infos->NO = get_texture_path(line, y + 2);
 	else if (line[y] == 'S' && line[y + 1] == 'O' && !(textures_infos->SO))
@@ -50,6 +50,6 @@ int	cardinals_textures(t_textures_infos *textures_infos, char *line, int y)
 	else if (line[y] == 'E' && line[y + 1] == 'A' && !(textures_infos->EA))
 		textures_infos->EA = get_texture_path(line, y + 2);
 	else
-		return (printf("\n--2 : y = %i --\n", y), ERROR);
+		return (ERROR);
 	return (SUCCESS);
 }

@@ -6,13 +6,13 @@
 /*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 11:50:41 by sel-maar          #+#    #+#             */
-/*   Updated: 2023/06/13 16:04:48 by valentin         ###   ########.fr       */
+/*   Updated: 2023/06/27 16:03:08 by valentin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <cub3d.h>
 
-static int	is_directory(char *arg)
+int	is_directory(char *arg)
 {
 	int		fd;
 
@@ -22,7 +22,7 @@ static int	is_directory(char *arg)
 	return (0);
 }
 
-static int	is_valid_char(char c)
+int	is_valid_char(char c)
 {
 	char	*invalid_set;
 
@@ -36,7 +36,7 @@ static int	is_valid_char(char c)
 	return (1);
 }
 
-static int	is_valid_filename(char *filename)
+int	is_valid_filename(char *filename)
 {
 	int	i;
 
@@ -75,7 +75,7 @@ int	check_input(int ac, char **av)
 		return (throw_error_msg(INVALID_FILENAME, filename, SHORT_FILENAME), 0);
 	if (ft_strcmp(&filename[filename_length - extension_length], CUB))
 		return (throw_error_msg(INVALID_FILENAME, filename, INVALID_EXTENSION), 0);
-	if (!is_valid_filename(av[1]))
+	if (!is_valid_filename(filename))
 		return (throw_error_msg(INVALID_FILENAME, filename, SPECIAL_CHARACTERS), 0);
 	fd = open(filename, O_RDONLY);
 	if (fd == -1)

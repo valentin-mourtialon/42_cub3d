@@ -6,7 +6,7 @@
 /*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 12:13:08 by sel-maar          #+#    #+#             */
-/*   Updated: 2023/06/15 15:55:20 by sel-maar         ###   ########.fr       */
+/*   Updated: 2023/06/27 16:16:05 by valentin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,12 +70,14 @@
 /******************************************************************************/
 
 typedef struct s_textures_infos {
-	char	*NO;
-	char	*SO;
-	char	*WE;
-	char	*EA;
-	int		*F;
-	int		*C;
+	char			*NO;
+	char			*SO;
+	char			*WE;
+	char			*EA;
+	int				*F;
+	int				*C;
+	unsigned int	hex_floor;
+	unsigned int	hex_ceiling;
 }	t_textures_infos;
 
 typedef struct s_input_infos {
@@ -123,6 +125,7 @@ void	init_data(t_data *data);
 void	init_input_infos(t_input_infos *input_infos);
 void	init_textures_infos(t_textures_infos *textures_infos);
 void	init_player(t_player *player);
+void	init_player_direction(t_data *data);
 
 /******************************************************************************/
 /*                                                                            */
@@ -131,6 +134,9 @@ void	init_player(t_player *player);
 /******************************************************************************/
 
 int		check_input(int ac, char **av);
+int		is_valid_filename(char *filename);
+int		is_valid_char(char c);
+int		is_directory(char *arg);
 int		retrieve_input(char *filepath, t_data *data);
 int		cardinals_textures(t_textures_infos *textures_infos, char *line, int y);
 int		colors_textures(t_data *data, t_textures_infos *textures_infos, char *line, int y);
@@ -138,6 +144,7 @@ int		parse(t_data *data, char **filetab);
 int		create_map(t_data *data, char **filetab, int x);
 int		check_map(t_data *data, char **map);
 int		check_map_sides(t_input_infos *infos, char **map);
+int		check_textures(t_data *data, t_textures_infos *textures);
 int		is_space(char c, int include_line_break);
 void	skip_spaces(char **filetab, int x, int *y);
 int		longest_line_length(t_input_infos *input_infos, int start_index);

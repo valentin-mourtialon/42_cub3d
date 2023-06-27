@@ -6,7 +6,7 @@
 #    By: valentin <valentin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/22 12:40:08 by sel-maar          #+#    #+#              #
-#    Updated: 2023/06/26 11:31:55 by valentin         ###   ########.fr        #
+#    Updated: 2023/06/27 16:11:01 by valentin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,6 +37,7 @@ SRCS_FILES =	cub3d.c \
 				init/init_input_infos.c \
 				init/init_textures_infos.c \
 				init/init_player.c \
+				init/init_player_direction.c \
 				parser/input_check.c \
 				parser/input_retrieve.c \
 				parser/input_parse.c \
@@ -44,6 +45,7 @@ SRCS_FILES =	cub3d.c \
 				parser/map_check.c \
 				parser/map_borders_check.c \
 				parser/textures_cardinals.c \
+				parser/textures_check.c \
 				parser/textures_colors.c \
 				parser/parser_utils.c \
 				utils/update_join.c \
