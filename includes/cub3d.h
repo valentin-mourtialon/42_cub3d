@@ -6,7 +6,7 @@
 /*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 12:13:08 by sel-maar          #+#    #+#             */
-/*   Updated: 2023/06/27 16:16:05 by valentin         ###   ########.fr       */
+/*   Updated: 2023/06/27 16:22:42 by valentin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,9 +59,9 @@
 # define INVALID_ARG "Invalid argument"
 # define INVALID_FILENAME "Invalid filename"
 # define INVALID_EXTENSION "Invalid extension"
-# define DIRECTORY "Input argument should be a filename not a directory."
-# define SHORT_FILENAME "A filename should have a .cub extension and should not be empty!"
-# define SPECIAL_CHARACTERS "A filename cannot contain special characters!"
+# define DIRECTORY "Input argument should be a filename not a directory"
+# define SHORT_FILENAME "Filename should have valid ext and should not be empty"
+# define SPECIAL_CHARACTERS "A filename cannot contain special characters"
 
 /******************************************************************************/
 /*                                                                            */
