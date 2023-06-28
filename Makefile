@@ -6,7 +6,7 @@
 #    By: valentin <valentin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/22 12:40:08 by sel-maar          #+#    #+#              #
-#    Updated: 2023/06/28 13:38:00 by valentin         ###   ########.fr        #
+#    Updated: 2023/06/28 17:50:22 by valentin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,6 +34,7 @@ INCLUDES = 		-I/usr/include -I./includes -I./lib/mlx_Linux -I./lib/std_libft/inc
 
 SRCS_FILES =	cub3d.c \
 				init/init_mlx.c \
+				init/init_ray.c \
 				init/init_data.c \
 				init/init_input_infos.c \
 				init/init_textures_infos.c \
@@ -50,6 +51,10 @@ SRCS_FILES =	cub3d.c \
 				parser/textures_check.c \
 				parser/textures_colors.c \
 				parser/parser_utils.c \
+				render_val/ray.c \
+				render_val/render.c \
+				render_val/textures.c \
+				render_val/render_utils.c \
 				utils/update_join.c \
 				exit/free.c \
 				exit/exit.c \

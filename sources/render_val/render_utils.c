@@ -1,27 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_data.c                                        :+:      :+:    :+:   */
+/*   render_utils.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/12 17:54:02 by valentin          #+#    #+#             */
-/*   Updated: 2023/06/28 17:31:42 by valentin         ###   ########.fr       */
+/*   Created: 2023/06/28 17:32:53 by valentin          #+#    #+#             */
+/*   Updated: 2023/06/28 17:33:03 by valentin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <cub3d.h>
 
-void	init_data(t_data *data)
+void	set_image_pixel(t_img *image, int x, int y, int color)
 {
-	data->mlx = NULL;
-	data->win = NULL;
-	data->win_height = WIN_HEIGHT;
-	data->win_width = WIN_WIDTH;
-	init_player(&data->player);
-	init_textures_infos(&data->textures_infos);
-	data->map = NULL;
-	init_input_infos(&data->input_infos);
-	data->texture_pixels = NULL;
-	data->textures = NULL;
+	int	pixel;
+
+	pixel = y * (image->size_line / 4) + x;
+	image->addr[pixel] = color;
 }

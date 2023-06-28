@@ -6,7 +6,7 @@
 /*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 12:13:08 by sel-maar          #+#    #+#             */
-/*   Updated: 2023/06/28 13:40:39 by valentin         ###   ########.fr       */
+/*   Updated: 2023/06/28 17:50:53 by valentin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 # include <string.h>
 # include <stdio.h>
 # include <stdlib.h>
-# include <unistd.h>
+# include <math.h>
 # include <unistd.h>
 
 /******************************************************************************/
@@ -124,6 +124,27 @@ typedef struct s_player {
 	int		rotate;
 }	t_player;
 
+typedef struct s_ray
+{
+	double	camera_x;
+	double	dir_x;
+	double	dir_y;
+	int		map_x;
+	int		map_y;
+	int		step_x;
+	int		step_y;
+	double	sidedist_x;
+	double	sidedist_y;
+	double	deltadist_x;
+	double	deltadist_y;
+	double	wall_dist;
+	double	wall_x;
+	int		side;
+	int		line_height;
+	int		draw_start;
+	int		draw_end;
+}	t_ray;
+
 typedef struct s_data {
 	void				*mlx;
 	void				*win;
@@ -131,6 +152,8 @@ typedef struct s_data {
 	int					win_width;
 	char				**map;
 	int					**textures;
+	int					**texture_pixels;
+	t_ray				ray;
 	t_textures_infos	textures_infos;
 	t_input_infos		input_infos;
 	t_player			player;
@@ -143,6 +166,7 @@ typedef struct s_data {
 /******************************************************************************/
 
 void	init_data(t_data *data);
+void	init_ray(t_ray *ray);
 void	init_input_infos(t_input_infos *input_infos);
 void	init_textures_infos(t_textures_infos *textures_infos);
 void	init_texture_img(t_data *data, t_img *image, char *path);
@@ -150,6 +174,7 @@ void	init_player(t_player *player);
 void	init_player_direction(t_data *data);
 void	init_textures(t_data *data);
 void	init_mlx(t_data *data);
+void	init_img(t_data *data, t_img *image, int width, int height);
 
 /******************************************************************************/
 /*                                                                            */
@@ -172,6 +197,18 @@ int		check_textures(t_data *data, t_textures_infos *textures);
 int		is_space(char c, int include_line_break);
 void	skip_spaces(char **filetab, int x, int *y);
 int		longest_line_length(t_input_infos *input_infos, int start_index);
+
+/******************************************************************************/
+/*                                                                            */
+/*                                 render                                     */
+/*                                                                            */
+/******************************************************************************/
+
+void	init_texture_pixels(t_data *data);
+void	update_texture_pixels(t_data *data, t_textures_infos *tex, t_ray *ray, int x);
+void	set_image_pixel(t_img *image, int x, int y, int color);
+int		render(t_data *data);
+int		raycasting(t_player *player, t_data *data);
 
 /******************************************************************************/
 /*                                                                            */

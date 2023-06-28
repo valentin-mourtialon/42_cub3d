@@ -14,7 +14,10 @@ See `main` branch for the project's Readme.
 	- colors_textures (parser/textures_colors.c)
 	- create_map (parser/map_create.c)
 5. check_map (parser/map_check.c && parser/map_borders_check.c)
-6. **WIP** check_textures (parser/textures_check.c)
+6. check_textures (parser/textures_check.c)
+7. init_player_direction
+8. init_mlx
+9. init_textures
 
 # TODO
 

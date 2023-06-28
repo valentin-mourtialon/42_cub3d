@@ -6,7 +6,7 @@
 /*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 13:03:08 by valentin          #+#    #+#             */
-/*   Updated: 2023/06/28 13:33:58 by valentin         ###   ########.fr       */
+/*   Updated: 2023/06/28 17:44:58 by valentin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,18 +21,16 @@ static void	init_img_data(t_img *img)
 	img->endian = 0;
 }
 
-/*
 void	init_img(t_data *data, t_img *image, int width, int height)
 {
-	init_img_clean(image);
+	init_img_data(image);
 	image->img = mlx_new_image(data->mlx, width, height);
 	if (image->img == NULL)
-		clean_exit(data, err_msg("mlx", ERR_MLX_IMG, 1));
+		exit_program(data, 1);
 	image->addr = (int *)mlx_get_data_addr(image->img, &image->pixel_bits,
 			&image->size_line, &image->endian);
 	return ;
 }
-*/
 
 void	init_texture_img(t_data *data, t_img *image, char *path)
 {
