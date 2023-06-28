@@ -6,7 +6,7 @@
 /*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 18:00:47 by valentin          #+#    #+#             */
-/*   Updated: 2023/06/28 18:08:02 by valentin         ###   ########.fr       */
+/*   Updated: 2023/06/28 18:55:43 by valentin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ static int	move_player_forward(t_data *data)
 	double	new_x;
 	double	new_y;
 
-	new_x = data->player.pos_x + data->player.dir_x * 0.0125;
-	new_y = data->player.pos_y + data->player.dir_y * 0.0125;
+	new_x = data->player.pos_x + data->player.dir_x * 0.035;
+	new_y = data->player.pos_y + data->player.dir_y * 0.035;
 	return (check_move(data, new_x, new_y));
 }
 
@@ -27,8 +27,8 @@ static int	move_player_backward(t_data *data)
 	double	new_x;
 	double	new_y;
 
-	new_x = data->player.pos_x - data->player.dir_x * 0.0125;
-	new_y = data->player.pos_y - data->player.dir_y * 0.0125;
+	new_x = data->player.pos_x - data->player.dir_x * 0.035;
+	new_y = data->player.pos_y - data->player.dir_y * 0.035;
 	return (check_move(data, new_x, new_y));
 }
 
@@ -37,8 +37,8 @@ static int	move_player_left(t_data *data)
 	double	new_x;
 	double	new_y;
 
-	new_x = data->player.pos_x + data->player.dir_y * 0.0125;
-	new_y = data->player.pos_y - data->player.dir_x * 0.0125;
+	new_x = data->player.pos_x + data->player.dir_y * 0.035;
+	new_y = data->player.pos_y - data->player.dir_x * 0.035;
 	return (check_move(data, new_x, new_y));
 }
 
@@ -47,8 +47,8 @@ static int	move_player_right(t_data *data)
 	double	new_x;
 	double	new_y;
 
-	new_x = data->player.pos_x - data->player.dir_y * 0.0125;
-	new_y = data->player.pos_y + data->player.dir_x * 0.0125;
+	new_x = data->player.pos_x - data->player.dir_y * 0.035;
+	new_y = data->player.pos_y + data->player.dir_x * 0.035;
 	return (check_move(data, new_x, new_y));
 }
 
@@ -66,6 +66,6 @@ int	move_player(t_data *data)
 	if (data->player.move_x == 1)
 		moved += move_player_right(data);
 	if (data->player.rotate != 0)
-		moved += rotate_player(data, data->player.rotate);
+		moved += rotate(data, data->player.rotate);
 	return (moved);
 }

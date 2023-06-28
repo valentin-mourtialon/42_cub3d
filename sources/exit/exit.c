@@ -6,7 +6,7 @@
 /*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 13:04:52 by valentin          #+#    #+#             */
-/*   Updated: 2023/06/28 13:27:34 by valentin         ###   ########.fr       */
+/*   Updated: 2023/06/28 18:46:21 by valentin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,10 @@ void	exit_program(t_data *data, int status)
 	}
 	free_data(data);
 	exit(status);
+}
+
+int	exit_cub(t_data *data)
+{
+	exit_program(data, 0);
+	return (0);
 }

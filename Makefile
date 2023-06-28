@@ -6,7 +6,7 @@
 #    By: valentin <valentin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/22 12:40:08 by sel-maar          #+#    #+#              #
-#    Updated: 2023/06/28 18:10:55 by valentin         ###   ########.fr        #
+#    Updated: 2023/06/28 18:23:32 by valentin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,6 +57,8 @@ SRCS_FILES =	cub3d.c \
 				render_val/render_utils.c \
 				movement/move.c \
 				movement/check_move.c \
+				movement/rotate.c \
+				movement/listener.c \
 				utils/update_join.c \
 				exit/free.c \
 				exit/exit.c \

@@ -6,7 +6,7 @@
 /*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 12:13:08 by sel-maar          #+#    #+#             */
-/*   Updated: 2023/06/28 18:09:47 by valentin         ###   ########.fr       */
+/*   Updated: 2023/06/28 19:09:17 by valentin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@
 # include <stdlib.h>
 # include <math.h>
 # include <unistd.h>
+# include <X11/keysym.h>
+# include <X11/X.h>
 
 /******************************************************************************/
 /*                                                                            */
@@ -36,11 +38,11 @@
 /******************************************************************************/
 
 # ifndef WIN_HEIGHT
-#  define WIN_HEIGHT 900
+#  define WIN_HEIGHT 800
 # endif
 
 # ifndef WIN_WIDTH
-#  define WIN_WIDTH 900
+#  define WIN_WIDTH 800
 # endif
 
 # define CUB ".cub"
@@ -60,6 +62,8 @@
 # define ERROR 2
 # define BREAK 3
 # define CONTINUE 4
+
+# define DIST_EDGE_MOUSE_WRAP 20
 
 # define INVALID_ARG "Invalid argument"
 # define INVALID_FILENAME "Invalid filename"
@@ -206,6 +210,8 @@ int		longest_line_length(t_input_infos *input_infos, int start_index);
 
 int		move_player(t_data *data);
 int		check_move(t_data *data, double new_x, double new_y);
+int		rotate(t_data *data, double rotdir);
+void	listen_for_input(t_data *data);
 
 /******************************************************************************/
 /*                                                                            */
@@ -237,6 +243,7 @@ void	free_ptr(void *ptr);
 void	free_tab(void **tab);
 void	free_data(t_data *data);
 void	exit_program(t_data *data, int status);
+int		exit_cub(t_data *data);
 
 /******************************************************************************/
 /*                                                                            */

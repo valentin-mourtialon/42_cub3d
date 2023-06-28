@@ -6,7 +6,7 @@
 /*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 11:10:13 by vmourtia          #+#    #+#             */
-/*   Updated: 2023/06/14 15:38:50 by valentin         ###   ########.fr       */
+/*   Updated: 2023/06/28 19:01:49 by valentin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,10 +55,10 @@ static void	free_textures_infos(t_textures_infos *textures_infos)
 
 void	free_data(t_data *data)
 {
-	/*if (data->textures)
-		free_tab((void **)data->textures);*/
-	/*if (data->texture_pixels)
-		free_tab((void **)data->texture_pixels);*/
+	if (data->textures)
+		free_tab((void **)data->textures);
+	if (data->texture_pixels)
+		free_tab((void **)data->texture_pixels);
 	free_textures_infos(&data->textures_infos);
 	if (data->input_infos.fd > 0)
 		close(data->input_infos.fd);
