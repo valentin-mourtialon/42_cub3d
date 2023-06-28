@@ -6,7 +6,7 @@
 /*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 17:19:05 by valentin          #+#    #+#             */
-/*   Updated: 2023/06/28 19:04:42 by valentin         ###   ########.fr       */
+/*   Updated: 2023/06/28 19:15:36 by valentin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static void	set_frame_image_pixel(t_data *data, t_img *image, int x, int y)
 		set_image_pixel(image, x, y, data->texture_pixels[y][x]);
 	else if (y < data->win_height / 2)
 		set_image_pixel(image, x, y, data->textures_infos.hex_ceiling);
-	else if (y < data->win_height -1)
+	else if (y < data->win_height - 1)
 		set_image_pixel(image, x, y, data->textures_infos.hex_floor);
 }
 
@@ -51,7 +51,7 @@ int	render(t_data *data)
 	if (data->player.has_moved == 0)
 		return (0);
 	init_texture_pixels(data);
-	//init_ray(&data->ray);
+	init_ray(&data->ray);
 	raycasting(&data->player, data);
 	render_frame(data);
 	return (0);
