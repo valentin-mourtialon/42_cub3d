@@ -6,7 +6,7 @@
 /*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 11:49:52 by sel-maar          #+#    #+#             */
-/*   Updated: 2023/06/27 16:15:38 by valentin         ###   ########.fr       */
+/*   Updated: 2023/06/28 13:02:29 by valentin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ int	main(int ac, char **av)
 	if (check_textures(&data, &data.textures_infos) == 0)
 		return (free_data(&data), 1);
 	init_player_direction(&data);
+	init_mlx(&data);
+	init_textures(&data);
 	free_data(&data);
 	return (0);
 }

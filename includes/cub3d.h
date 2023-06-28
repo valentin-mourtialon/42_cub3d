@@ -6,7 +6,7 @@
 /*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 12:13:08 by sel-maar          #+#    #+#             */
-/*   Updated: 2023/06/27 16:22:42 by valentin         ###   ########.fr       */
+/*   Updated: 2023/06/28 13:29:13 by valentin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,11 @@
 
 # define INCLUDE_LINE_BREAK 1
 
+# define NORTH 0
+# define SOUTH 1
+# define EAST 2
+# define WEST 3
+
 # define FAILURE 0
 # define SUCCESS 1
 # define ERROR 2
@@ -69,6 +74,15 @@
 /*                                                                            */
 /******************************************************************************/
 
+typedef struct s_img
+{
+	void	*img;
+	int		*addr;
+	int		pixel_bits;
+	int		size_line;
+	int		endian;
+}	t_img;
+
 typedef struct s_textures_infos {
 	char			*NO;
 	char			*SO;
@@ -78,6 +92,12 @@ typedef struct s_textures_infos {
 	int				*C;
 	unsigned int	hex_floor;
 	unsigned int	hex_ceiling;
+	int				size;
+	int				index;
+	double			step;
+	double			pos;
+	int				x;
+	int				y;
 }	t_textures_infos;
 
 typedef struct s_input_infos {
@@ -110,6 +130,7 @@ typedef struct s_data {
 	int					win_height;
 	int					win_width;
 	char				**map;
+	int					**textures;
 	t_textures_infos	textures_infos;
 	t_input_infos		input_infos;
 	t_player			player;
@@ -126,6 +147,8 @@ void	init_input_infos(t_input_infos *input_infos);
 void	init_textures_infos(t_textures_infos *textures_infos);
 void	init_player(t_player *player);
 void	init_player_direction(t_data *data);
+void	init_textures(t_data *data);
+void	init_mlx(t_data *data);
 
 /******************************************************************************/
 /*                                                                            */
@@ -166,6 +189,7 @@ void	throw_error_msg(char *header, char *details, char *body);
 void	free_ptr(void *ptr);
 void	free_tab(void **tab);
 void	free_data(t_data *data);
+void	exit_program(t_data *data, int status);
 
 /******************************************************************************/
 /*                                                                            */
