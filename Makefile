@@ -6,7 +6,7 @@
 #    By: valentin <valentin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/22 12:40:08 by sel-maar          #+#    #+#              #
-#    Updated: 2023/06/28 13:22:32 by valentin         ###   ########.fr        #
+#    Updated: 2023/06/28 13:38:00 by valentin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,7 @@ INCLUDES = 		-I/usr/include -I./includes -I./lib/mlx_Linux -I./lib/std_libft/inc
 ################################################################################
 
 SRCS_FILES =	cub3d.c \
-				init/inti_mlx.c \
+				init/init_mlx.c \
 				init/init_data.c \
 				init/init_input_infos.c \
 				init/init_textures_infos.c \

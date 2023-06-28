@@ -6,7 +6,7 @@
 /*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 12:13:08 by sel-maar          #+#    #+#             */
-/*   Updated: 2023/06/28 13:29:13 by valentin         ###   ########.fr       */
+/*   Updated: 2023/06/28 13:40:39 by valentin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -145,6 +145,7 @@ typedef struct s_data {
 void	init_data(t_data *data);
 void	init_input_infos(t_input_infos *input_infos);
 void	init_textures_infos(t_textures_infos *textures_infos);
+void	init_texture_img(t_data *data, t_img *image, char *path);
 void	init_player(t_player *player);
 void	init_player_direction(t_data *data);
 void	init_textures(t_data *data);

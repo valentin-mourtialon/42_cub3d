@@ -6,7 +6,7 @@
 /*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 19:57:05 by valentin          #+#    #+#             */
-/*   Updated: 2023/06/28 13:16:53 by valentin         ###   ########.fr       */
+/*   Updated: 2023/06/28 13:39:24 by valentin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ void	init_textures_infos(t_textures_infos *textures_infos)
 	textures_infos->EA = NULL;
 	textures_infos->F = 0;
 	textures_infos->C = 0;
-	textures_infos_infos->hex_floor = 0x0;
+	textures_infos->hex_floor = 0x0;
 	textures_infos->hex_ceiling = 0x0;
-	textures_infos->size = TEX_SIZE;
+	textures_infos->size = 64;
 	textures_infos->step = 0.0;
 	textures_infos->pos = 0.0;
 	textures_infos->x = 0;
