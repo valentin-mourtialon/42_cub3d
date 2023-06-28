@@ -6,7 +6,7 @@
 /*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 12:13:08 by sel-maar          #+#    #+#             */
-/*   Updated: 2023/06/28 17:50:53 by valentin         ###   ########.fr       */
+/*   Updated: 2023/06/28 18:09:47 by valentin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -197,6 +197,15 @@ int		check_textures(t_data *data, t_textures_infos *textures);
 int		is_space(char c, int include_line_break);
 void	skip_spaces(char **filetab, int x, int *y);
 int		longest_line_length(t_input_infos *input_infos, int start_index);
+
+/******************************************************************************/
+/*                                                                            */
+/*                                movement                                    */
+/*                                                                            */
+/******************************************************************************/
+
+int		move_player(t_data *data);
+int		check_move(t_data *data, double new_x, double new_y);
 
 /******************************************************************************/
 /*                                                                            */
