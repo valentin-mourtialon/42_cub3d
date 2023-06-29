@@ -6,7 +6,7 @@
 /*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 17:19:05 by valentin          #+#    #+#             */
-/*   Updated: 2023/06/28 19:15:36 by valentin         ###   ########.fr       */
+/*   Updated: 2023/06/28 19:24:02 by valentin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ int	render(t_data *data)
 	if (data->player.has_moved == 0)
 		return (0);
 	init_texture_pixels(data);
-	init_ray(&data->ray);
 	raycasting(&data->player, data);
 	render_frame(data);
 	return (0);
