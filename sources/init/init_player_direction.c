@@ -6,7 +6,7 @@
 /*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 16:08:43 by valentin          #+#    #+#             */
-/*   Updated: 2023/06/27 16:09:06 by valentin         ###   ########.fr       */
+/*   Updated: 2023/06/29 10:39:32 by valentin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,6 @@ static void	init_player_north_south(t_player *player)
 		player->plane_x = 0.66;
 		player->plane_y = 0;
 	}
-	else
-		return ;
 }
 
 static void	init_player_east_west(t_player *player)
@@ -48,8 +46,6 @@ static void	init_player_east_west(t_player *player)
 		player->plane_x = 0;
 		player->plane_y = 0.66;
 	}
-	else
-		return ;
 }
 
 void	init_player_direction(t_data *data)
