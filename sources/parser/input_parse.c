@@ -6,7 +6,7 @@
 /*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 20:02:20 by valentin          #+#    #+#             */
-/*   Updated: 2023/06/26 15:38:39 by valentin         ###   ########.fr       */
+/*   Updated: 2023/06/29 13:54:37 by sel-maar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,15 @@ static int	extract_parts(t_data *data, char **filetab, int x, int y)
 	{
 		if (filetab[x][y + 1] && ft_isprint(filetab[x][y + 1]))
 		{
-			if (cardinals_textures(&data->textures_infos, filetab[x], y) == ERROR)
+			if (cardinals_textures(&data->textures_infos,
+					filetab[x], y) == ERROR)
 				return (printf("INVALID TEXTURE\n"), FAILURE);
 			return (BREAK);
 		}
 		else
 		{
-			if (colors_textures(data, &data->textures_infos, filetab[x], y) == ERROR)
+			if (colors_textures(data, &data->textures_infos,
+					filetab[x], y) == ERROR)
 				return (printf("INVALID COLOR\n"), FAILURE);
 			return (BREAK);
 		}

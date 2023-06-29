@@ -6,7 +6,7 @@
 /*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 15:03:32 by valentin          #+#    #+#             */
-/*   Updated: 2023/06/26 15:38:08 by valentin         ###   ########.fr       */
+/*   Updated: 2023/06/29 14:04:04 by sel-maar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,8 @@ static int	fill_map(t_input_infos *input_infos, char **map, int file_index)
 		map[x] = malloc(sizeof(char) * (input_infos->width + 1));
 		if (!map[x])
 			return (FAILURE);
-		while (input_infos->filetab[file_index][y] && input_infos->filetab[file_index][y] != '\n')
+		while (input_infos->filetab[file_index][y] &&
+				input_infos->filetab[file_index][y] != '\n')
 		{
 			map[x][y] = input_infos->filetab[file_index][y];
 			y++;
@@ -84,7 +85,8 @@ static void	fill_spaces(t_data *data)
 			y++;
 		while (data->map[x][++y])
 		{
-			if (data->map[x][y] == ' ' && y != data->map[x][ft_strlen(data->map[x]) - 1])
+			if (data->map[x][y] == ' ' && y !=
+					data->map[x][ft_strlen(data->map[x]) - 1])
 				data->map[x][y] = '1';
 		}
 		x++;

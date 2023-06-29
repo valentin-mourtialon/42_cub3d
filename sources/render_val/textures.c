@@ -6,7 +6,7 @@
 /*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 17:27:00 by valentin          #+#    #+#             */
-/*   Updated: 2023/06/28 17:54:34 by valentin         ###   ########.fr       */
+/*   Updated: 2023/06/29 14:08:15 by sel-maar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,8 @@ static void	get_texture_index(t_data *data, t_ray *ray)
 	}
 }
 
-void	update_texture_pixels(t_data *data, t_textures_infos *tex, t_ray *ray, int x)
+void	update_texture_pixels(t_data *data, t_textures_infos *tex,
+		t_ray *ray, int x)
 {
 	int			y;
 	int			color;

@@ -6,7 +6,7 @@
 /*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 13:54:11 by valentin          #+#    #+#             */
-/*   Updated: 2023/06/26 11:11:12 by valentin         ###   ########.fr       */
+/*   Updated: 2023/06/29 14:05:18 by sel-maar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,11 @@ void	skip_spaces(char **filetab, int x, int *y)
 int	is_space(char c, int include_line_break)
 {
 	if (include_line_break == 1)
-		return (c == ' ' || c == '\t' || c == '\f' || c == '\r' || c == '\v' || c == '\n');
+		return (c == ' ' || c == '\t' || c == '\f'
+			|| c == '\r' || c == '\v' || c == '\n');
 	else
-		return (c == ' ' || c == '\t' || c == '\f' || c == '\r' || c == '\v');
+		return (c == ' ' || c == '\t' || c == '\f'
+			|| c == '\r' || c == '\v');
 }
 
 int	longest_line_length(t_input_infos *input_infos, int start_index)

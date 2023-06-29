@@ -6,7 +6,7 @@
 /*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 15:35:54 by valentin          #+#    #+#             */
-/*   Updated: 2023/06/27 16:18:19 by valentin         ###   ########.fr       */
+/*   Updated: 2023/06/29 14:00:10 by sel-maar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,17 +45,19 @@ static int	check_xpm_file(char *filename)
 	int		filename_length;
 	int		extension_length;
 	int		fd;
-	
+
 	if (is_directory(filename))
 		return (throw_error_msg(INVALID_ARG, filename, DIRECTORY), 0);
 	filename_length = ft_strlen(filename);
 	extension_length = ft_strlen(XPM);
-	if (filename_length <= extension_length)	
+	if (filename_length <= extension_length)
 		return (throw_error_msg(INVALID_FILENAME, filename, SHORT_FILENAME), 0);
 	if (ft_strcmp(&filename[filename_length - extension_length], XPM))
-		return (throw_error_msg(INVALID_FILENAME, filename, INVALID_EXTENSION), 0);
+		return (throw_error_msg(INVALID_FILENAME, filename,
+				INVALID_EXTENSION), 0);
 	if (!is_valid_filename(filename))
-		return (throw_error_msg(INVALID_FILENAME, filename, SPECIAL_CHARACTERS), 0);
+		return (throw_error_msg(INVALID_FILENAME, filename,
+				SPECIAL_CHARACTERS), 0);
 	fd = open(filename, O_RDONLY);
 	if (fd == -1)
 		return (throw_error_msg(NULL, filename, strerror(errno)), 0);

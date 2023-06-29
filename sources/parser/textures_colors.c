@@ -6,7 +6,7 @@
 /*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 14:28:47 by valentin          #+#    #+#             */
-/*   Updated: 2023/06/27 15:26:12 by valentin         ###   ########.fr       */
+/*   Updated: 2023/06/29 14:01:41 by sel-maar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,14 +53,15 @@ static int	*set_rgb_colors(char *line)
 	while (rgb_to_convert[count])
 		count++;
 	if (count != 3)
-		return(free_tab((void **)rgb_to_convert), NULL);
+		return (free_tab((void **)rgb_to_convert), NULL);
 	rgb = malloc(sizeof(int) * 3);
 	if (!rgb)
 		return (0);
 	return (copy_into_rgb_array(rgb_to_convert, rgb));
 }
 
-int	colors_textures(t_data *data, t_textures_infos *textures_infos, char *line, int y)
+int	colors_textures(t_data *data, t_textures_infos *textures_infos,
+		char *line, int y)
 {
 	if (line[y + 1] && ft_isprint(line[y + 1]))
 		return (throw_error_msg(data->input_infos.filepath, NULL, NULL), ERROR);

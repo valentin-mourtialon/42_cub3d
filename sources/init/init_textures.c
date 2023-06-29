@@ -6,7 +6,7 @@
 /*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 13:11:53 by valentin          #+#    #+#             */
-/*   Updated: 2023/06/29 10:40:39 by valentin         ###   ########.fr       */
+/*   Updated: 2023/06/29 14:06:06 by sel-maar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ static int	*xpm_to_img(t_data *data, char *path)
 	int		y;
 
 	init_texture_img(data, &tmp, path);
-	buffer = calloc(1, sizeof * buffer * data->textures_infos.size * data->textures_infos.size);
+	buffer = calloc(1, sizeof * buffer * data->textures_infos.size
+			* data->textures_infos.size);
 	if (!buffer)
 		exit_program(data, 1);
 	y = 0;
