@@ -6,7 +6,7 @@
 /*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 12:13:08 by sel-maar          #+#    #+#             */
-/*   Updated: 2023/06/28 19:17:50 by valentin         ###   ########.fr       */
+/*   Updated: 2023/06/29 10:32:06 by valentin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -222,6 +222,7 @@ void	update_texture_pixels(t_data *data, t_textures_infos *tex, t_ray *ray, int 
 void	set_image_pixel(t_img *image, int x, int y, int color);
 int		render(t_data *data);
 int		raycasting(t_player *player, t_data *data);
+void	render_images(t_data *data);
 
 /******************************************************************************/
 /*                                                                            */

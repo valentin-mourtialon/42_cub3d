@@ -6,7 +6,7 @@
 /*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 17:19:05 by valentin          #+#    #+#             */
-/*   Updated: 2023/06/28 19:24:02 by valentin         ###   ########.fr       */
+/*   Updated: 2023/06/29 10:31:22 by valentin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,13 +45,19 @@ static void	render_frame(t_data *data)
 	mlx_destroy_image(data->mlx, image.img);
 }
 
+void	render_images(t_data *data)
+{
+	init_ray(&data->ray);
+	init_texture_pixels(data);
+	raycasting(&data->player, data);
+	render_frame(data);
+}
+
 int	render(t_data *data)
 {
 	data->player.has_moved += move_player(data);
 	if (data->player.has_moved == 0)
 		return (0);
-	init_texture_pixels(data);
-	raycasting(&data->player, data);
-	render_frame(data);
+	render_images(data);
 	return (0);
 }
