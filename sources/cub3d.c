@@ -6,7 +6,7 @@
 /*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 11:49:52 by sel-maar          #+#    #+#             */
-/*   Updated: 2023/06/29 10:32:59 by valentin         ###   ########.fr       */
+/*   Updated: 2023/06/29 10:53:40 by valentin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,8 @@ int	main(int ac, char **av)
 	init_mlx(&data);
 	init_textures(&data);
 	render_images(&data);
-
 	listen_for_input(&data);
 	mlx_loop_hook(data.mlx, render, &data);
 	mlx_loop(data.mlx);
-
 	return (0);
 }
