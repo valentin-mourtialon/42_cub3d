@@ -63,8 +63,6 @@
 # define BREAK 3
 # define CONTINUE 4
 
-# define DIST_EDGE_MOUSE_WRAP 20
-
 # define INVALID_ARG "Invalid argument"
 # define INVALID_FILENAME "Invalid filename"
 # define INVALID_EXTENSION "Invalid extension"
