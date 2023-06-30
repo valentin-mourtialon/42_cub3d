@@ -24,9 +24,9 @@ void	retrieve_input_test(void)
 	t_retrieve_input_test	test5 = { "maps/valid/tinymap.cub", {1, 11} };
 
 	printf("\nTesting "LIGHT_CYAN"retrieve_inputs(char *pathfile, t_data data)"RESET" cf sources/parser/\n\n");
-	printf("\ttest 1:		%s\n", (test1.expected[1] == retrieve_input(test1.input, &data[0]) && test1.expected[1] == data[0].input_infos.nb_of_lines )? LIGHT_GREEN"OK"RESET : LIGHT_RED"KO"RESET);
-	printf("\ttest 2:		%s\n", (test2.expected[1] == retrieve_input(test2.input, &data[1]) && test1.expected[1] == data[1].input_infos.nb_of_lines )? LIGHT_GREEN"OK"RESET : LIGHT_RED"KO"RESET);
-	printf("\ttest 3:		%s\n", (test3.expected[1] == retrieve_input(test3.input, &data[2]) && test1.expected[1] == data[2].input_infos.nb_of_lines )? LIGHT_GREEN"OK"RESET : LIGHT_RED"KO"RESET);
-	printf("\ttest 4:		%s\n", (test4.expected[1] == retrieve_input(test4.input, &data[3]) && test1.expected[1] == data[3].input_infos.nb_of_lines )? LIGHT_GREEN"OK"RESET : LIGHT_RED"KO"RESET);
-	printf("\ttest 5:		%s\n\n", (test5.expected[1] == retrieve_input(test5.input, &data[4]) && test1.expected[1] == data[4].input_infos.nb_of_lines )? LIGHT_GREEN"OK"RESET : LIGHT_RED"KO"RESET);
+	printf("\ttest 1:		%s\n", (test1.expected[1] == retrieve_input(test1.input, &data[0]) && test1.expected[1] == data[0].input_infos.nb_of_lines )? LIGHT_RED"KO"RESET : LIGHT_GREEN"OK"RESET);
+	printf("\ttest 2:		%s\n", (test2.expected[1] == retrieve_input(test2.input, &data[1]) && test1.expected[1] == data[1].input_infos.nb_of_lines )? LIGHT_RED"KO"RESET : LIGHT_GREEN"OK"RESET);
+	printf("\ttest 3:		%s\n", (test3.expected[1] == retrieve_input(test3.input, &data[2]) && test1.expected[1] == data[2].input_infos.nb_of_lines )? LIGHT_RED"KO"RESET : LIGHT_GREEN"OK"RESET);
+	printf("\ttest 4:		%s\n", (test4.expected[1] == retrieve_input(test4.input, &data[3]) && test1.expected[1] == data[3].input_infos.nb_of_lines )? LIGHT_RED"KO"RESET : LIGHT_GREEN"OK"RESET);
+	printf("\ttest 5:		%s\n\n", (test5.expected[1] == retrieve_input(test5.input, &data[4]) && test1.expected[1] == data[4].input_infos.nb_of_lines )? LIGHT_RED"KO"RESET : LIGHT_GREEN"OK"RESET);
 }
