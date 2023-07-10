@@ -6,7 +6,7 @@
 /*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 12:13:08 by sel-maar          #+#    #+#             */
-/*   Updated: 2023/06/29 10:32:06 by valentin         ###   ########.fr       */
+/*   Updated: 2023/06/29 14:28:42 by sel-maar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -190,7 +190,8 @@ int		is_valid_char(char c);
 int		is_directory(char *arg);
 int		retrieve_input(char *filepath, t_data *data);
 int		cardinals_textures(t_textures_infos *textures_infos, char *line, int y);
-int		colors_textures(t_data *data, t_textures_infos *textures_infos, char *line, int y);
+int		colors_textures(t_data *data, t_textures_infos *textures_infos,
+			char *line, int y);
 int		parse(t_data *data, char **filetab);
 int		create_map(t_data *data, char **filetab, int x);
 int		check_map(t_data *data, char **map);
@@ -218,7 +219,8 @@ void	listen_for_input(t_data *data);
 /******************************************************************************/
 
 void	init_texture_pixels(t_data *data);
-void	update_texture_pixels(t_data *data, t_textures_infos *tex, t_ray *ray, int x);
+void	update_texture_pixels(t_data *data, t_textures_infos *tex,
+			t_ray *ray, int x);
 void	set_image_pixel(t_img *image, int x, int y, int color);
 int		render(t_data *data);
 int		raycasting(t_player *player, t_data *data);
