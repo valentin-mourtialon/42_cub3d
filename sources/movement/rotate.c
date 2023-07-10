@@ -6,7 +6,7 @@
 /*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 18:13:07 by valentin          #+#    #+#             */
-/*   Updated: 2023/06/29 10:44:24 by valentin         ###   ########.fr       */
+/*   Updated: 2023/06/29 17:19:29 by valentin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	rotate(t_data *data, double rotdir)
 	double	rotspeed;
 
 	moved = 0;
-	rotspeed = 0.035 * rotdir;
+	rotspeed = 0.03 * rotdir;
 	moved += rotate_left_right(data, rotspeed);
 	return (moved);
 }

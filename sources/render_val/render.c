@@ -6,7 +6,7 @@
 /*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 17:19:05 by valentin          #+#    #+#             */
-/*   Updated: 2023/06/29 14:07:11 by sel-maar         ###   ########.fr       */
+/*   Updated: 2023/07/10 12:29:05 by valentin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ void	render_images(t_data *data)
 
 int	render(t_data *data)
 {
+	//printf("player move_x = %d\n", data->player.move_x);
 	data->player.has_moved += move_player(data);
 	if (data->player.has_moved == 0)
 		return (0);
