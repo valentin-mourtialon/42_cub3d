@@ -6,7 +6,7 @@
 /*   By: vmourtia <vmourtia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 12:53:08 by vmourtia          #+#    #+#             */
-/*   Updated: 2023/05/31 18:12:30 by vmourtia         ###   ########.fr       */
+/*   Updated: 2023/07/11 13:13:43 by vmourtia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	char	*joined;	
 	int		i;
 	int		j;
-	
+
 	joined = malloc(sizeof(*joined) * (ft_strlen(s1) + ft_strlen(s2) + 1));
 	if (joined == NULL)
 		return (NULL);

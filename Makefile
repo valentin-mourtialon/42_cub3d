@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: valentin <valentin@student.42.fr>          +#+  +:+       +#+         #
+#    By: vmourtia <vmourtia@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/22 12:40:08 by sel-maar          #+#    #+#              #
-#    Updated: 2023/06/28 18:23:32 by valentin         ###   ########.fr        #
+#    Updated: 2023/07/11 13:17:47 by vmourtia         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -104,7 +104,6 @@ clean:
 				@${MAKE} clean -s -C ./lib/mlx_Linux
 				@${MAKE} clean -s -C ./lib/std_libft
 				@${MAKE} clean -s -C ./lib/gnl
-				@${MAKE} clean -s -C ./tests
 				@${RM} ${OBJS_PATH} logs
 
 fclean: clean

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   textures_check.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vmourtia <vmourtia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 15:35:54 by valentin          #+#    #+#             */
-/*   Updated: 2023/06/29 14:00:10 by sel-maar         ###   ########.fr       */
+/*   Updated: 2023/07/11 13:01:13 by vmourtia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,18 +67,18 @@ static int	check_xpm_file(char *filename)
 
 int	check_textures(t_data *data, t_textures_infos *textures)
 {
-	if (!textures->NO || !textures->SO || !textures->WE || !textures->EA)
+	if (!textures->no || !textures->so || !textures->we || !textures->ea)
 		return (0);
-	if (!textures->F || !textures->C)
+	if (!textures->f || !textures->c)
 		return (0);
-	if (check_xpm_file(textures->NO) == 0
-		|| check_xpm_file(textures->SO) == 0
-		|| check_xpm_file(textures->WE) == 0
-		|| check_xpm_file(textures->EA) == 0
-		|| check_valid_rgb(textures->F) == 0
-		|| check_valid_rgb(textures->C) == 0)
+	if (check_xpm_file(textures->no) == 0
+		|| check_xpm_file(textures->so) == 0
+		|| check_xpm_file(textures->we) == 0
+		|| check_xpm_file(textures->ea) == 0
+		|| check_valid_rgb(textures->f) == 0
+		|| check_valid_rgb(textures->c) == 0)
 		return (0);
-	textures->hex_floor = convert_rgb_to_hex(textures->F);
-	textures->hex_ceiling = convert_rgb_to_hex(textures->C);
+	textures->hex_floor = convert_rgb_to_hex(textures->f);
+	textures->hex_ceiling = convert_rgb_to_hex(textures->c);
 	return (1);
 }

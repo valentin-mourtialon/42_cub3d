@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   textures_cardinals.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vmourtia <vmourtia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 14:01:18 by valentin          #+#    #+#             */
-/*   Updated: 2023/06/29 13:53:35 by sel-maar         ###   ########.fr       */
+/*   Updated: 2023/07/11 13:00:46 by vmourtia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,14 +41,14 @@ int	cardinals_textures(t_textures_infos *textures_infos, char *line, int y)
 {
 	if (line[y + 2] && ft_isprint(line[y + 2]))
 		return (ERROR);
-	if (line[y] == 'N' && line[y + 1] == 'O' && !(textures_infos->NO))
-		textures_infos->NO = get_texture_path(line, y + 2);
-	else if (line[y] == 'S' && line[y + 1] == 'O' && !(textures_infos->SO))
-		textures_infos->SO = get_texture_path(line, y + 2);
-	else if (line[y] == 'W' && line[y + 1] == 'E' && !(textures_infos->WE))
-		textures_infos->WE = get_texture_path(line, y + 2);
-	else if (line[y] == 'E' && line[y + 1] == 'A' && !(textures_infos->EA))
-		textures_infos->EA = get_texture_path(line, y + 2);
+	if (line[y] == 'N' && line[y + 1] == 'O' && !(textures_infos->no))
+		textures_infos->no = get_texture_path(line, y + 2);
+	else if (line[y] == 'S' && line[y + 1] == 'O' && !(textures_infos->so))
+		textures_infos->so = get_texture_path(line, y + 2);
+	else if (line[y] == 'W' && line[y + 1] == 'E' && !(textures_infos->we))
+		textures_infos->we = get_texture_path(line, y + 2);
+	else if (line[y] == 'E' && line[y + 1] == 'A' && !(textures_infos->ea))
+		textures_infos->ea = get_texture_path(line, y + 2);
 	else
 		return (ERROR);
 	return (SUCCESS);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   textures_colors.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vmourtia <vmourtia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 14:28:47 by valentin          #+#    #+#             */
-/*   Updated: 2023/06/29 14:01:41 by sel-maar         ###   ########.fr       */
+/*   Updated: 2023/07/11 12:59:09 by vmourtia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,16 +65,16 @@ int	colors_textures(t_data *data, t_textures_infos *textures_infos,
 {
 	if (line[y + 1] && ft_isprint(line[y + 1]))
 		return (throw_error_msg(data->input_infos.filepath, NULL, NULL), ERROR);
-	if (!textures_infos->C && line[y] == 'C')
+	if (!textures_infos->c && line[y] == 'C')
 	{
-		textures_infos->C = set_rgb_colors(line + y + 1);
-		if (textures_infos->C == 0)
+		textures_infos->c = set_rgb_colors(line + y + 1);
+		if (textures_infos->c == 0)
 			return (ERROR);
 	}
-	else if (!textures_infos->F && line[y] == 'F')
+	else if (!textures_infos->f && line[y] == 'F')
 	{
-		textures_infos->F = set_rgb_colors(line + y + 1);
-		if (textures_infos->F == 0)
+		textures_infos->f = set_rgb_colors(line + y + 1);
+		if (textures_infos->f == 0)
 			return (ERROR);
 	}
 	else

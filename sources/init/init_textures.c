@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_textures.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vmourtia <vmourtia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 13:11:53 by valentin          #+#    #+#             */
-/*   Updated: 2023/06/29 14:06:06 by sel-maar         ###   ########.fr       */
+/*   Updated: 2023/07/11 12:53:11 by vmourtia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,8 @@ void	init_textures(t_data *data)
 	data->textures = calloc(5, sizeof * data->textures);
 	if (!data->textures)
 		exit_program(data, 1);
-	data->textures[NORTH] = xpm_to_img(data, data->textures_infos.NO);
-	data->textures[SOUTH] = xpm_to_img(data, data->textures_infos.SO);
-	data->textures[EAST] = xpm_to_img(data, data->textures_infos.EA);
-	data->textures[WEST] = xpm_to_img(data, data->textures_infos.WE);
+	data->textures[NORTH] = xpm_to_img(data, data->textures_infos.no);
+	data->textures[SOUTH] = xpm_to_img(data, data->textures_infos.so);
+	data->textures[EAST] = xpm_to_img(data, data->textures_infos.ea);
+	data->textures[WEST] = xpm_to_img(data, data->textures_infos.we);
 }

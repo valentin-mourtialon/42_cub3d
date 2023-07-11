@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vmourtia <vmourtia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 12:13:08 by sel-maar          #+#    #+#             */
-/*   Updated: 2023/06/29 14:28:42 by sel-maar         ###   ########.fr       */
+/*   Updated: 2023/07/11 12:49:31 by vmourtia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,12 +86,12 @@ typedef struct s_img
 }	t_img;
 
 typedef struct s_textures_infos {
-	char			*NO;
-	char			*SO;
-	char			*WE;
-	char			*EA;
-	int				*F;
-	int				*C;
+	char			*no;
+	char			*so;
+	char			*we;
+	char			*ea;
+	int				*f;
+	int				*c;
 	unsigned int	hex_floor;
 	unsigned int	hex_ceiling;
 	int				size;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_create.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vmourtia <vmourtia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 15:03:32 by valentin          #+#    #+#             */
-/*   Updated: 2023/06/29 14:04:04 by sel-maar         ###   ########.fr       */
+/*   Updated: 2023/07/11 13:03:58 by vmourtia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,9 +51,7 @@ static int	fill_map(t_input_infos *input_infos, char **map, int file_index)
 			y++;
 		}	
 		while (y < input_infos->width)
-		{
 			map[x][y++] = '\0';
-		}
 		x++;
 		file_index++;
 	}

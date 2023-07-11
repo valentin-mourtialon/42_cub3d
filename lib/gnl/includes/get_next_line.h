@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vmourtia <vmourtia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 10:18:54 by valentin          #+#    #+#             */
-/*   Updated: 2023/06/12 17:36:18 by valentin         ###   ########.fr       */
+/*   Updated: 2023/07/11 13:10:54 by vmourtia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include <signal.h>
 
 # ifndef BUFFER_SIZE
-# 	define BUFFER_SIZE 10
+#  define BUFFER_SIZE 10
 # endif
 
 /*
@@ -30,14 +30,14 @@
 typedef struct s_list {
 	char			*str;
 	struct s_list	*next;
-} t_list;
+}	t_list;
 
 typedef struct s_gnl {
 	char	*line;
 	char	*buffer;
 	size_t	nbytes;
 	int		fd;
-} t_gnl;
+}	t_gnl;
 
 /* get_next_line.c */
 char	*get_next_line(int fd);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vmourtia <vmourtia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 10:24:30 by valentin          #+#    #+#             */
-/*   Updated: 2023/06/12 16:45:34 by valentin         ###   ########.fr       */
+/*   Updated: 2023/07/11 13:08:01 by vmourtia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,12 +82,12 @@ static void	read_and_save(t_list **memory, t_gnl *gnl)
 	{
 		gnl->buffer = malloc(sizeof(char) * (BUFFER_SIZE + 1));
 		if (gnl->buffer == NULL)
-			return;
+			return ;
 		gnl->nbytes = read(gnl->fd, gnl->buffer, BUFFER_SIZE);
 		if ((*memory == NULL && gnl->nbytes == 0) || (int)gnl->nbytes == -1)
 		{
 			free(gnl->buffer);
-			return;
+			return ;
 		}
 		gnl->buffer[gnl->nbytes] = '\0';
 		add_back_to_memory(memory, gnl);

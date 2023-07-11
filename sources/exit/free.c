@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   free.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vmourtia <vmourtia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 11:10:13 by vmourtia          #+#    #+#             */
-/*   Updated: 2023/06/29 14:08:50 by sel-maar         ###   ########.fr       */
+/*   Updated: 2023/07/11 12:58:52 by vmourtia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,18 +39,18 @@ void	free_tab(void **tab)
 
 static void	free_textures_infos(t_textures_infos *textures_infos)
 {
-	if (textures_infos->NO)
-		free(textures_infos->NO);
-	if (textures_infos->SO)
-		free(textures_infos->SO);
-	if (textures_infos->WE)
-		free(textures_infos->WE);
-	if (textures_infos->EA)
-		free(textures_infos->EA);
-	if (textures_infos->F)
-		free(textures_infos->F);
-	if (textures_infos->C)
-		free(textures_infos->C);
+	if (textures_infos->no)
+		free(textures_infos->no);
+	if (textures_infos->so)
+		free(textures_infos->so);
+	if (textures_infos->we)
+		free(textures_infos->we);
+	if (textures_infos->ea)
+		free(textures_infos->ea);
+	if (textures_infos->f)
+		free(textures_infos->f);
+	if (textures_infos->c)
+		free(textures_infos->c);
 }
 
 void	free_data(t_data *data)

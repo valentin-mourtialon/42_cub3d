@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   clear.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vmourtia <vmourtia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 13:32:39 by valentin          #+#    #+#             */
-/*   Updated: 2023/02/03 15:55:27 by valentin         ###   ########.fr       */
+/*   Updated: 2023/07/11 13:08:55 by vmourtia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	clear_memory(t_list **memory)
 
 	cleared_node = malloc(sizeof(*cleared_node));
 	if (memory == NULL || cleared_node == NULL)
-		return;
+		return ;
 	cleared_node->next = NULL;
 	last = get_last_memory_element(*memory);
 	i = 0;
@@ -49,7 +49,7 @@ void	clear_memory(t_list **memory)
 		i++;
 	cleared_node->str = malloc(sizeof(char) * (ft_strlen(last->str) - i + 1));
 	if (cleared_node == NULL)
-		return;
+		return ;
 	j = 0;
 	while (last->str[i])
 		cleared_node->str[j++] = last->str[i++];
