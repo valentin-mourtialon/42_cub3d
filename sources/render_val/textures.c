@@ -6,7 +6,7 @@
 /*   By: vmourtia <vmourtia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 17:27:00 by valentin          #+#    #+#             */
-/*   Updated: 2023/07/11 12:53:48 by vmourtia         ###   ########.fr       */
+/*   Updated: 2023/07/11 13:20:59 by vmourtia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@ void	init_texture_pixels(t_data *data)
 
 	if (data->texture_pixels)
 		free_tab((void **)data->texture_pixels);
-	data->texture_pixels = calloc(data->win_height + 1,
+	data->texture_pixels = ft_calloc(data->win_height + 1,
 			sizeof * data->texture_pixels);
 	if (!data->texture_pixels)
 		exit_program(data, 1);
 	i = 0;
 	while (i < data->win_height)
 	{
-		data->texture_pixels[i] = calloc(data->win_width + 1,
+		data->texture_pixels[i] = ft_calloc(data->win_width + 1,
 				sizeof * data->texture_pixels);
 		if (!data->texture_pixels[i])
 			exit_program(data, 1);

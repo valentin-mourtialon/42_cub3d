@@ -6,7 +6,7 @@
 /*   By: vmourtia <vmourtia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 13:11:53 by valentin          #+#    #+#             */
-/*   Updated: 2023/07/11 12:53:11 by vmourtia         ###   ########.fr       */
+/*   Updated: 2023/07/11 13:20:39 by vmourtia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static int	*xpm_to_img(t_data *data, char *path)
 	int		y;
 
 	init_texture_img(data, &tmp, path);
-	buffer = calloc(1, sizeof * buffer * data->textures_infos.size
+	buffer = ft_calloc(1, sizeof * buffer * data->textures_infos.size
 			* data->textures_infos.size);
 	if (!buffer)
 		exit_program(data, 1);
@@ -42,7 +42,7 @@ static int	*xpm_to_img(t_data *data, char *path)
 
 void	init_textures(t_data *data)
 {
-	data->textures = calloc(5, sizeof * data->textures);
+	data->textures = ft_calloc(5, sizeof * data->textures);
 	if (!data->textures)
 		exit_program(data, 1);
 	data->textures[NORTH] = xpm_to_img(data, data->textures_infos.no);

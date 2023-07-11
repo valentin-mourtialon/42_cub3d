@@ -6,7 +6,7 @@
 /*   By: vmourtia <vmourtia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 15:28:27 by valentin          #+#    #+#             */
-/*   Updated: 2023/07/11 13:03:10 by vmourtia         ###   ########.fr       */
+/*   Updated: 2023/07/11 13:21:07 by vmourtia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static int	fill_filetab(t_data *data)
 	line = get_next_line(data->input_infos.fd);
 	while (line != NULL)
 	{
-		data->input_infos.filetab[x] = calloc(ft_strlen(line) + 1,
+		data->input_infos.filetab[x] = ft_calloc(ft_strlen(line) + 1,
 				sizeof(char));
 		if (data->input_infos.filetab[x] == NULL)
 			return (free_tab((void **)data->input_infos.filetab), 0);
@@ -64,7 +64,7 @@ int	retrieve_input(char *filepath, t_data *data)
 {
 	data->input_infos.nb_of_lines = count_lines(filepath);
 	data->input_infos.filepath = filepath;
-	data->input_infos.filetab = calloc(data->input_infos.nb_of_lines + 1,
+	data->input_infos.filetab = ft_calloc(data->input_infos.nb_of_lines + 1,
 			sizeof(char *));
 	if (data->input_infos.filetab == NULL)
 		return (0);
