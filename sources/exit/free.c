@@ -6,7 +6,7 @@
 /*   By: vmourtia <vmourtia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 11:10:13 by vmourtia          #+#    #+#             */
-/*   Updated: 2023/07/11 12:58:52 by vmourtia         ###   ########.fr       */
+/*   Updated: 2023/07/11 14:26:38 by vmourtia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ void	free_tab(void **tab)
 {
 	size_t	i;
 
+	if (tab == NULL)
+		return ;
 	i = 0;
 	while (tab[i])
 	{
@@ -55,6 +57,8 @@ static void	free_textures_infos(t_textures_infos *textures_infos)
 
 void	free_data(t_data *data)
 {
+	if (data == NULL)
+		return ;
 	if (data->textures)
 		free_tab((void **)data->textures);
 	if (data->texture_pixels)

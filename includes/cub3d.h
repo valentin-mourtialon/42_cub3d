@@ -6,7 +6,7 @@
 /*   By: vmourtia <vmourtia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 12:13:08 by sel-maar          #+#    #+#             */
-/*   Updated: 2023/07/11 14:08:49 by vmourtia         ###   ########.fr       */
+/*   Updated: 2023/07/11 14:19:42 by vmourtia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -203,7 +203,7 @@ int		parse(t_data *data, char **filetab);
 int		create_map(t_data *data, char **filetab, int x);
 int		check_map(t_data *data, char **map);
 int		check_map_sides(t_input_infos *infos, char **map);
-int		check_textures(t_textures_infos *textures);
+int		check_textures(t_data *data, t_textures_infos *textures);
 int		is_space(char c, int include_line_break);
 void	skip_spaces(char **filetab, int x, int *y);
 int		longest_line_length(t_input_infos *input_infos, int start_index);

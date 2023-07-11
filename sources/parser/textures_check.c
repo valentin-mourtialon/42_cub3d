@@ -6,7 +6,7 @@
 /*   By: vmourtia <vmourtia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 15:35:54 by valentin          #+#    #+#             */
-/*   Updated: 2023/07/11 14:08:12 by vmourtia         ###   ########.fr       */
+/*   Updated: 2023/07/11 14:19:21 by vmourtia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,8 +65,9 @@ static int	check_xpm_file(char *filename)
 	return (1);
 }
 
-int	check_textures(t_textures_infos *textures)
+int	check_textures(t_data *data, t_textures_infos *textures)
 {
+	(void)data;
 	if (!textures->no || !textures->so || !textures->we || !textures->ea)
 		return (throw_error_msg("Error\nNO TEXTURES", "cardinals", NULL), 0);
 	if (!textures->f || !textures->c)

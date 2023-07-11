@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vmourtia <vmourtia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 18:13:32 by vmourtia          #+#    #+#             */
-/*   Updated: 2023/06/13 16:53:43 by valentin         ###   ########.fr       */
+/*   Updated: 2023/07/11 14:38:37 by vmourtia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,6 @@ int		ft_isdigit(int c);
 void	ft_bzero(void *s, size_t n);
 int		ft_atoi(char *str);
 char	**ft_split(char *s, char c);
-void	*ft_calloc(size_t nmemb, size_t size);
+void	*ft_calloc(size_t count, size_t size);
 
 #endif
