@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_check.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vmourtia <vmourtia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 16:40:53 by valentin          #+#    #+#             */
-/*   Updated: 2023/06/29 14:03:14 by sel-maar         ###   ########.fr       */
+/*   Updated: 2023/07/11 13:50:42 by vmourtia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ static int	check_player_position(t_data *data, char **map)
 	int	y;
 
 	if (data->player.dir == '0')
-		return (0);
+		return (throw_error_msg("Error\nINVALID POSITION", NULL, NULL), 0);
 	x = 0;
 	while (map[x])
 	{
@@ -77,7 +77,7 @@ static int	check_player_position(t_data *data, char **map)
 		x++;
 	}
 	if (check_position_is_valid(data, map) == 0)
-		return (0);
+		return (throw_error_msg("Error\nINVALID POSITION", NULL, NULL), 0);
 	return (1);
 }
 
@@ -93,7 +93,7 @@ static int	check_if_map_is_at_the_end(t_input_infos *infos)
 		while (infos->filetab[x][y])
 		{
 			if (!is_space(infos->filetab[x][y], INCLUDE_LINE_BREAK))
-				return (0);
+				return (throw_error_msg(MAP_NOT_END, NULL, NULL), 0);
 			y++;
 		}
 		x++;
@@ -104,13 +104,13 @@ static int	check_if_map_is_at_the_end(t_input_infos *infos)
 int	check_map(t_data *data, char **map)
 {
 	if (!data->map)
-		return (0);
+		return (throw_error_msg("Error\nAINT NO MAP", NULL, NULL), 0);
 	if (check_map_sides(&data->input_infos, map) == FAILURE)
-		return (0);
+		return (throw_error_msg("Error\nINVALID SIDES", NULL, NULL), 0);
 	if (data->input_infos.height < 3)
-		return (0);
+		return (throw_error_msg("Error\nMAP TOO SMALL", NULL, NULL), 0);
 	if (check_map_elements(data, map) == FAILURE)
-		return (0);
+		return (throw_error_msg("Error\nINVALID CHAR IN MAP", NULL, NULL), 0);
 	if (check_player_position(data, map) == FAILURE)
 		return (0);
 	if (check_if_map_is_at_the_end(&data->input_infos) == FAILURE)

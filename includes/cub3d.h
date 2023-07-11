@@ -6,7 +6,7 @@
 /*   By: vmourtia <vmourtia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 12:13:08 by sel-maar          #+#    #+#             */
-/*   Updated: 2023/07/11 12:49:31 by vmourtia         ###   ########.fr       */
+/*   Updated: 2023/07/11 14:08:49 by vmourtia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,12 +63,19 @@
 # define BREAK 3
 # define CONTINUE 4
 
-# define INVALID_ARG "Invalid argument"
-# define INVALID_FILENAME "Invalid filename"
+# define NB_ARG "Error\nInvalid number of arguments !"
+# define INVALID_ARG "Error\nInvalid argument"
+# define INVALID_FILENAME "Error\nInvalid filename"
 # define INVALID_EXTENSION "Invalid extension"
-# define DIRECTORY "Input argument should be a filename not a directory"
-# define SHORT_FILENAME "Filename should have valid ext and should not be empty"
-# define SPECIAL_CHARACTERS "A filename cannot contain special characters"
+# define INV_TEXT "Error\nINVALID TEXTURE\n"
+# define INV_COLOR "Error\nINVALID COLOR\n"
+# define INV_MAP "Error\nINVALID MAP\n"
+# define DIRECTORY "Error\nInput argument should be a filename not a directory"
+# define SHORT_FILENAME "Filename should have valid ext \
+and should not be empty"
+# define SPECIAL_CHARACTERS "Error\nA filename cannot \
+contain special characters"
+# define MAP_NOT_END "Error\nMAP NOT AT THE END"
 
 /******************************************************************************/
 /*                                                                            */
@@ -196,7 +203,7 @@ int		parse(t_data *data, char **filetab);
 int		create_map(t_data *data, char **filetab, int x);
 int		check_map(t_data *data, char **map);
 int		check_map_sides(t_input_infos *infos, char **map);
-int		check_textures(t_data *data, t_textures_infos *textures);
+int		check_textures(t_textures_infos *textures);
 int		is_space(char c, int include_line_break);
 void	skip_spaces(char **filetab, int x, int *y);
 int		longest_line_length(t_input_infos *input_infos, int start_index);

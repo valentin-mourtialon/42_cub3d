@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vmourtia <vmourtia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 11:49:52 by sel-maar          #+#    #+#             */
-/*   Updated: 2023/06/29 10:53:40 by valentin         ###   ########.fr       */
+/*   Updated: 2023/07/11 14:09:55 by vmourtia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	main(int ac, char **av)
 		return (free_data(&data), 1);
 	if (check_map(&data, data.map) == 0)
 		return (free_data(&data), 1);
-	if (check_textures(&data, &data.textures_infos) == 0)
+	if (check_textures(&data.textures_infos) == 0)
 		return (free_data(&data), 1);
 	init_player_direction(&data);
 	init_mlx(&data);

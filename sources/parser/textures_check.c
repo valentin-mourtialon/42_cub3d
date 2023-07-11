@@ -6,7 +6,7 @@
 /*   By: vmourtia <vmourtia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 15:35:54 by valentin          #+#    #+#             */
-/*   Updated: 2023/07/11 13:01:13 by vmourtia         ###   ########.fr       */
+/*   Updated: 2023/07/11 14:08:12 by vmourtia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,19 +65,19 @@ static int	check_xpm_file(char *filename)
 	return (1);
 }
 
-int	check_textures(t_data *data, t_textures_infos *textures)
+int	check_textures(t_textures_infos *textures)
 {
 	if (!textures->no || !textures->so || !textures->we || !textures->ea)
-		return (0);
+		return (throw_error_msg("Error\nNO TEXTURES", "cardinals", NULL), 0);
 	if (!textures->f || !textures->c)
-		return (0);
+		return (throw_error_msg("Error\nFLOOR / CEIL TEXTURE", NULL, NULL), 0);
 	if (check_xpm_file(textures->no) == 0
 		|| check_xpm_file(textures->so) == 0
 		|| check_xpm_file(textures->we) == 0
 		|| check_xpm_file(textures->ea) == 0
 		|| check_valid_rgb(textures->f) == 0
 		|| check_valid_rgb(textures->c) == 0)
-		return (0);
+		return (throw_error_msg("Error\nXPM TEXT ISSUE", NULL, NULL), 0);
 	textures->hex_floor = convert_rgb_to_hex(textures->f);
 	textures->hex_ceiling = convert_rgb_to_hex(textures->c);
 	return (1);

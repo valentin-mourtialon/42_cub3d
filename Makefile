@@ -6,7 +6,7 @@
 #    By: vmourtia <vmourtia@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/22 12:40:08 by sel-maar          #+#    #+#              #
-#    Updated: 2023/07/11 13:17:47 by vmourtia         ###   ########.fr        #
+#    Updated: 2023/07/11 14:06:59 by vmourtia         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -93,12 +93,12 @@ GNL =			-L./lib/gnl -lgnl
 all: title ${NAME} 
 
 ${NAME}: make_mlx
-				@${CC} ${CFLAGS} ${OBJS} ${MLX} ${GNL} ${LIBFT} -o ${NAME}
+				@${CC} ${OBJS} ${MLX} ${GNL} ${LIBFT} -o ${NAME}
 				@echo "${LIGHT_CYAN}${BOLD}cub3D	${RESET}${BLUE}${BOLD}${ITALIC}🔥 Ready to fire ! 🔥${RESET}\n\n"
 
 ${OBJS_PATH}%.o: %.c
 				@mkdir -p ${dir $@}
-				@${CC} ${INCLUDES} -c $< -o $@
+				@${CC} ${CFLAGS} -MMD ${INCLUDES} -c $< -o $@
 
 clean:
 				@${MAKE} clean -s -C ./lib/mlx_Linux
@@ -113,23 +113,9 @@ re:
 				@${MAKE} fclean -s
 				@${MAKE} all -s
 
+-include {OBJS_FILES:.o=.d}
+
 .PHONY: all clean fclean re
-
-################################################################################
-#                                                                              #
-#                                  tests                                       #
-#                                                                              #
-################################################################################
-
-test: test_title make_cublib
-				@./test 2>> logs/test_logs.txt
-				@echo "${BOLD}Find test logs in logs/test_logs.txt\n\n${RESET}"
-
-make_cublib: ${NAME_LIB}
-				@${MAKE} -s -C ./tests/
-
-${NAME_LIB}: make_mlx
-				@ar -r ${NAME_LIB} ${OBJS} 2> logs/make_test_logs.txt
 
 ################################################################################
 #                                                                              #
@@ -164,19 +150,6 @@ title:
 				@echo "${BLUE}    ██║░░██╗██║░░░██║██╔══██╗░╚═══██╗██║░░██║    ${RESET}"
 				@echo "${BLUE}    ╚█████╔╝╚██████╔╝██████╦╝██████╔╝██████╔╝    ${RESET}"
 				@echo "${BLUE}    ░╚════╝░░╚═════╝░╚═════╝░╚═════╝░╚═════╝░    ${RESET}"
-				@echo
-				@echo
-
-test_title:
-				@${CLEAR}
-				@echo
-				@echo
-				@echo "${LIGHT_CYAN}    ████████╗███████╗░██████╗████████╗    ${RESET}"
-				@echo "${LIGHT_CYAN}    ╚══██╔══╝██╔════╝██╔════╝╚══██╔══╝    ${RESET}"
-				@echo "${LIGHT_CYAN}    ░░░██║░░░█████╗░░╚█████╗░░░░██║░░░    ${RESET}"
-				@echo "${LIGHT_CYAN}    ░░░██║░░░██╔══╝░░░╚═══██╗░░░██║░░░    ${RESET}"
-				@echo "${LIGHT_CYAN}    ░░░██║░░░███████╗██████╔╝░░░██║░░░    ${RESET}"
-				@echo "${LIGHT_CYAN}    ░░░╚═╝░░░╚══════╝╚═════╝░░░░╚═╝░░░    ${RESET}"
 				@echo
 				@echo
 

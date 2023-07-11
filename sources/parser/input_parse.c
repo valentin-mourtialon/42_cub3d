@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   input_parse.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vmourtia <vmourtia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 20:02:20 by valentin          #+#    #+#             */
-/*   Updated: 2023/06/29 13:54:37 by sel-maar         ###   ########.fr       */
+/*   Updated: 2023/07/11 13:35:31 by vmourtia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,21 +21,21 @@ static int	extract_parts(t_data *data, char **filetab, int x, int y)
 		{
 			if (cardinals_textures(&data->textures_infos,
 					filetab[x], y) == ERROR)
-				return (printf("INVALID TEXTURE\n"), FAILURE);
+				return (throw_error_msg(INV_TEXT, NULL, NULL), FAILURE);
 			return (BREAK);
 		}
 		else
 		{
 			if (colors_textures(data, &data->textures_infos,
 					filetab[x], y) == ERROR)
-				return (printf("INVALID COLOR\n"), FAILURE);
+				return (throw_error_msg(INV_COLOR, NULL, NULL), FAILURE);
 			return (BREAK);
 		}
 	}
 	else if (ft_isdigit(filetab[x][y]))
 	{
 		if (create_map(data, filetab, x) == FAILURE)
-			return (printf("INVALID MAP\n"), FAILURE);
+			return (throw_error_msg(INV_MAP, NULL, NULL), FAILURE);
 		return (SUCCESS);
 	}
 	return (CONTINUE);

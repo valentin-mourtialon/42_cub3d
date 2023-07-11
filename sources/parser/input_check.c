@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   input_check.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vmourtia <vmourtia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 11:50:41 by sel-maar          #+#    #+#             */
-/*   Updated: 2023/06/29 13:58:09 by sel-maar         ###   ########.fr       */
+/*   Updated: 2023/07/11 13:29:29 by vmourtia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ int	check_input(int ac, char **av)
 	int		fd;
 
 	if (ac != 2)
-		return (0);
+		return (throw_error_msg(NB_ARG, NULL, NULL), 0);
 	if (is_directory(av[1]))
 		return (throw_error_msg(INVALID_ARG, av[1], DIRECTORY), 0);
 	filename = av[1];
