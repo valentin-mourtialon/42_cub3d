@@ -6,7 +6,7 @@
 /*   By: vmourtia <vmourtia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 14:28:47 by valentin          #+#    #+#             */
-/*   Updated: 2023/07/11 13:59:26 by vmourtia         ###   ########.fr       */
+/*   Updated: 2023/07/11 18:39:14 by vmourtia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ static int	*set_rgb_colors(char *line)
 		return (free_tab((void **)rgb_to_convert), NULL);
 	rgb = malloc(sizeof(int) * 3);
 	if (!rgb)
-		return (0);
+		return (free_tab((void **)rgb_to_convert), NULL);
 	return (copy_into_rgb_array(rgb_to_convert, rgb));
 }
 

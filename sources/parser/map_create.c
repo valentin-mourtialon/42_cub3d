@@ -6,7 +6,7 @@
 /*   By: vmourtia <vmourtia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 15:03:32 by valentin          #+#    #+#             */
-/*   Updated: 2023/07/11 13:03:58 by vmourtia         ###   ########.fr       */
+/*   Updated: 2023/07/11 19:16:51 by vmourtia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,9 +91,44 @@ static void	fill_spaces(t_data *data)
 	}
 }
 
+static int	check_around(t_data *data, int x, int y)
+{
+	if (y < data->input_infos.height && data->map[x][y + 1] != '1' && data->map[x][y + 1] != '0'&& data->map[x][y + 1] != 'N' && data->map[x][y + 1] != 'S' && data->map[x][y + 1] != 'W' && data->map[x][y + 1] != 'E')
+		return (0);
+	if (y > 0 && data->map[x][y - 1] != '1' && data->map[x][y - 1] != '0' && data->map[x][y - 1] != 'N' && data->map[x][y - 1] != 'S' && data->map[x][y - 1] != 'W' && data->map[x][y - 1] != 'E')
+		return (0);
+	if (x < data->input_infos.width && data->map[x + 1][y] != '1' && data->map[x + 1][y] != '0' && data->map[x + 1][y] != 'N' && data->map[x + 1][y] != 'S' && data->map[x + 1][y] != 'W' && data->map[x + 1][y] != 'E')
+		return (0);
+	if (x > 0 && data->map[x - 1][y] != '1' && data->map[x - 1][y] != '0' && data->map[x - 1][y] != 'N' && data->map[x - 1][y] != 'S' && data->map[x - 1][y] != 'W' && data->map[x - 1][y] != 'E')
+		return (0);
+	return (1);
+}
+
+static int	check_if_map_is_closed(t_data *data)
+{
+	int	x;
+	int	y;
+
+	x = 0;
+	while (data->map[x])
+	{
+		y = 0;
+		while (data->map[x][y])
+		{
+			if ((data->map[x][y] == '0' || data->map[x][y] == 'N' || data->map[x][y] == 'S' || data->map[x][y] == 'W' || data->map[x][y] == 'E') && check_around(data, x, y) == 0)
+				return (0);
+			y++;
+		}
+		x++;
+	}
+	return (1);
+}
+
 int	create_map(t_data *data, char **filetab, int x)
 {
 	if (get_map_info(data, filetab, x) == FAILURE)
+		return (FAILURE);
+	if (check_if_map_is_closed(data) == 0)
 		return (FAILURE);
 	fill_spaces(data);
 	return (SUCCESS);
