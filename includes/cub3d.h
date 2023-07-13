@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vmourtia <vmourtia@student.42.fr>          +#+  +:+       +#+        */
+/*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 12:13:08 by sel-maar          #+#    #+#             */
-/*   Updated: 2023/07/11 14:19:42 by vmourtia         ###   ########.fr       */
+/*   Updated: 2023/07/13 19:01:05 by valentin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,15 +67,19 @@
 # define INVALID_ARG "Error\nInvalid argument"
 # define INVALID_FILENAME "Error\nInvalid filename"
 # define INVALID_EXTENSION "Invalid extension"
-# define INV_TEXT "Error\nINVALID TEXTURE\n"
-# define INV_COLOR "Error\nINVALID COLOR\n"
-# define INV_MAP "Error\nINVALID MAP\n"
+# define INV_TEXT "Error\nINVALID TEXTURE"
+# define INV_COLOR "Error\nINVALID COLOR"
+# define INV_MAP "Error\nINVALID MAP"
 # define DIRECTORY "Error\nInput argument should be a filename not a directory"
 # define SHORT_FILENAME "Filename should have valid ext \
 and should not be empty"
 # define SPECIAL_CHARACTERS "Error\nA filename cannot \
 contain special characters"
 # define MAP_NOT_END "Error\nMAP NOT AT THE END"
+
+# define ERR_NO_PLAYER "Error\nNO PLAYER IN THE MAP"
+# define ERR_FF_INIT "Error\nFLOOD FILL MAP INITIALIZATION"
+# define ERR_MAP_OPEN "Error\nMAP ISN'T CLOSE"
 
 /******************************************************************************/
 /*                                                                            */
@@ -207,6 +211,10 @@ int		check_textures(t_data *data, t_textures_infos *textures);
 int		is_space(char c, int include_line_break);
 void	skip_spaces(char **filetab, int x, int *y);
 int		longest_line_length(t_input_infos *input_infos, int start_index);
+void	print_map(char **map);
+
+int		flood_fill(char **map, t_input_infos input_infos);
+int		build_walls(t_data *data);
 
 /******************************************************************************/
 /*                                                                            */

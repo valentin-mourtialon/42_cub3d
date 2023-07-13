@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_create.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vmourtia <vmourtia@student.42.fr>          +#+  +:+       +#+        */
+/*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 15:03:32 by valentin          #+#    #+#             */
-/*   Updated: 2023/07/12 14:41:40 by sel-maar         ###   ########.fr       */
+/*   Updated: 2023/07/13 19:00:30 by valentin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,12 @@ static int	count_map_lines(t_data *data, char **filetab, int x)
 		y = 0;
 		while (is_space(filetab[x][y], 0))
 			y++;
-		if (filetab[x][y] != '1')
+		if (filetab[x][y] == '0' || filetab[x][y] == 'N' || filetab[x][y] == 'S' || filetab[x][y] == 'W' || filetab[x][y] == 'E')
+		{
+			x++;
+			continue ;
+		}
+		else if (filetab[x][y] != '1')
 			break ;
 		x++;
 	}
@@ -89,60 +94,24 @@ static void	fill_spaces(t_data *data)
 		}
 		x++;
 	}
+	print_map(data->map);
 }
 
-static int	check_around(t_data *data, int x, int y)
-{
-	if (y < data->input_infos.height && data->map[x][y + 1] != '1' &&
-		data->map[x][y + 1] != '0' && data->map[x][y + 1] != 'N' &&
-		data->map[x][y + 1] != 'S' && data->map[x][y + 1] != 'W'
-		&& data->map[x][y + 1] != 'E')
-		return (0);
-	if (y > 0 && data->map[x][y - 1] != '1' && data->map[x][y - 1] != '0'
-		&& data->map[x][y - 1] != 'N' && data->map[x][y - 1] != 'S' &&
-		data->map[x][y - 1] != 'W' && data->map[x][y - 1] != 'E')
-		return (0);
-	if (x < data->input_infos.width && data->map[x + 1][y] != '1'
-		&& data->map[x + 1][y] != '0' && data->map[x + 1][y] != 'N'
-		&& data->map[x + 1][y] != 'S' && data->map[x + 1][y] != 'W'
-		&& data->map[x + 1][y] != 'E')
-		return (0);
-	if (x > 0 && data->map[x - 1][y] != '1' && data->map[x - 1][y] != '0'
-		&& data->map[x - 1][y] != 'N' && data->map[x - 1][y] != 'S'
-		&& data->map[x - 1][y] != 'W' && data->map[x - 1][y] != 'E')
-		return (0);
-	return (1);
-}
-
-static int	check_if_map_is_closed(t_data *data)
-{
-	int	x;
-	int	y;
-
-	x = 0;
-	while (data->map[x])
-	{
-		y = 0;
-		while (data->map[x][y])
-		{
-			if ((data->map[x][y] == '0' || data->map[x][y] == 'N'
-				|| data->map[x][y] == 'S' || data->map[x][y] == 'W'
-				|| data->map[x][y] == 'E')
-				&& check_around(data, x, y) == 0)
-				return (0);
-			y++;
-		}
-		x++;
-	}
-	return (1);
-}
-
+/*
+	printf("\nfull map height = %d\nfull map width = %d\n", data->input_infos.height, data->input_infos.width); 
+*/
 int	create_map(t_data *data, char **filetab, int x)
 {
 	if (get_map_info(data, filetab, x) == FAILURE)
 		return (FAILURE);
-	if (check_if_map_is_closed(data) == 0)
+
+	if (flood_fill(data->map, data->input_infos) == FAILURE)
 		return (FAILURE);
+
+	printf("\nSUCCESS ! Your map is valid !\n");
+
+	build_walls(data);
 	fill_spaces(data);
+
 	return (SUCCESS);
 }

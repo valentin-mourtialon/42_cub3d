@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: vmourtia <vmourtia@student.42.fr>          +#+  +:+       +#+         #
+#    By: valentin <valentin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/22 12:40:08 by sel-maar          #+#    #+#              #
-#    Updated: 2023/07/11 14:06:59 by vmourtia         ###   ########.fr        #
+#    Updated: 2023/07/13 19:01:43 by valentin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ NAME_LIB =		libcub3D.a
 
 CC =			cc
 
-CFLAGS =		-Wall -Werror -Wextra -g
+CFLAGS =		-Wall -Werror -Wextra -g -Wno-unused-function
 
 INCLUDES = 		-I/usr/include -I./includes -I./lib/mlx_Linux -I./lib/std_libft/includes -I./lib/gnl/includes
 
@@ -44,6 +44,8 @@ SRCS_FILES =	cub3d.c \
 				parser/input_check.c \
 				parser/input_retrieve.c \
 				parser/input_parse.c \
+				parser/map_flood_fill.c \
+				parser/map_build_walls.c \
 				parser/map_create.c \
 				parser/map_check.c \
 				parser/map_borders_check.c \

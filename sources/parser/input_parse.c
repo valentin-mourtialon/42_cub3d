@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   input_parse.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vmourtia <vmourtia@student.42.fr>          +#+  +:+       +#+        */
+/*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 20:02:20 by valentin          #+#    #+#             */
-/*   Updated: 2023/07/11 13:35:31 by vmourtia         ###   ########.fr       */
+/*   Updated: 2023/07/13 19:03:47 by valentin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static int	extract_parts(t_data *data, char **filetab, int x, int y)
 	else if (ft_isdigit(filetab[x][y]))
 	{
 		if (create_map(data, filetab, x) == FAILURE)
-			return (throw_error_msg(INV_MAP, NULL, NULL), FAILURE);
+			return (FAILURE);
 		return (SUCCESS);
 	}
 	return (CONTINUE);

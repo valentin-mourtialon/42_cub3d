@@ -6,7 +6,7 @@
 /*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 13:54:11 by valentin          #+#    #+#             */
-/*   Updated: 2023/06/29 14:05:18 by sel-maar         ###   ########.fr       */
+/*   Updated: 2023/07/13 18:15:33 by valentin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,25 @@ int	longest_line_length(t_input_infos *input_infos, int start_index)
 		x++;
 	}
 	return (longest_length);
+}
+
+void	print_map(char **map)
+{
+	int	x;
+	int	y;
+
+	printf("\n\nMAP\n\n");
+	x = 0;
+	while (map[x])
+	{
+		y = 0;
+		while (map[x][y])
+		{
+			printf("%c", map[x][y]);
+			y++;
+		}
+		printf("\n");
+		x++;
+	}
+	printf("\n\n");
 }
