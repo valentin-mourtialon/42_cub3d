@@ -6,7 +6,7 @@
 /*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 15:03:32 by valentin          #+#    #+#             */
-/*   Updated: 2023/07/13 19:00:30 by valentin         ###   ########.fr       */
+/*   Updated: 2023/07/14 14:15:28 by sel-maar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ static int	count_map_lines(t_data *data, char **filetab, int x)
 		y = 0;
 		while (is_space(filetab[x][y], 0))
 			y++;
-		if (filetab[x][y] == '0' || filetab[x][y] == 'N' || filetab[x][y] == 'S' || filetab[x][y] == 'W' || filetab[x][y] == 'E')
+		if (filetab[x][y] == '0' || filetab[x][y] == 'N' || filetab[x][y] == 'S'
+			|| filetab[x][y] == 'W' || filetab[x][y] == 'E')
 		{
 			x++;
 			continue ;
@@ -97,21 +98,16 @@ static void	fill_spaces(t_data *data)
 	print_map(data->map);
 }
 
-/*
-	printf("\nfull map height = %d\nfull map width = %d\n", data->input_infos.height, data->input_infos.width); 
-*/
+//printf("\nfull map height = %d\nfull map width = %d\n",
+//data->input_infos.height, data->input_infos.width);
 int	create_map(t_data *data, char **filetab, int x)
 {
 	if (get_map_info(data, filetab, x) == FAILURE)
 		return (FAILURE);
-
 	if (flood_fill(data->map, data->input_infos) == FAILURE)
 		return (FAILURE);
-
 	printf("\nSUCCESS ! Your map is valid !\n");
-
 	build_walls(data);
 	fill_spaces(data);
-
 	return (SUCCESS);
 }

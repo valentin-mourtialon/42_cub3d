@@ -6,7 +6,7 @@
 /*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 16:13:26 by valentin          #+#    #+#             */
-/*   Updated: 2023/07/13 18:20:29 by valentin         ###   ########.fr       */
+/*   Updated: 2023/07/14 14:13:59 by sel-maar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,9 +101,8 @@ static int	run_flood_fill(t_input_infos input_infos, char **map, int *start)
 	return (1);
 }
 
-/*
-	printf("\ninitial position : x = %d, y = %d\n", starting_point[0],  starting_point[1]);
-*/
+//printf("\ninitial position : x = %d, y = %d\n", starting_point[0]
+//, starting_point[1]);
 int	flood_fill(char **map, t_input_infos input_infos)
 {
 	char	**ff_map;
