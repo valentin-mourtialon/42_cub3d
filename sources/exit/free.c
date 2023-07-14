@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   free.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vmourtia <vmourtia@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sel-maar <sel-maar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 11:10:13 by vmourtia          #+#    #+#             */
-/*   Updated: 2023/07/11 14:26:38 by vmourtia         ###   ########.fr       */
+/*   Updated: 2023/07/14 14:48:38 by sel-maar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,4 +70,13 @@ void	free_data(t_data *data)
 		free_tab((void **)data->input_infos.filetab);
 	if (data->map)
 		free_tab((void **)data->map);
+}
+
+void	free_gnl(char *line, t_data *data)
+{
+	while (line)
+	{
+		free(line);
+		line = get_next_line(data->input_infos.fd);
+	}
 }

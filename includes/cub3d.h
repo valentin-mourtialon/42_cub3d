@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sel-maar <sel-maar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 12:13:08 by sel-maar          #+#    #+#             */
-/*   Updated: 2023/07/13 19:01:05 by valentin         ###   ########.fr       */
+/*   Updated: 2023/07/14 14:46:49 by sel-maar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -260,6 +260,7 @@ void	free_tab(void **tab);
 void	free_data(t_data *data);
 void	exit_program(t_data *data, int status);
 int		exit_cub(t_data *data);
+void	free_gnl(char *line, t_data *data);
 
 /******************************************************************************/
 /*                                                                            */
