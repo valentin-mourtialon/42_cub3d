@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_build_walls.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sel-maar <sel-maar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 18:59:49 by valentin          #+#    #+#             */
-/*   Updated: 2023/07/14 14:16:13 by sel-maar         ###   ########.fr       */
+/*   Updated: 2023/07/14 14:20:50 by sel-maar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,6 @@ int	build_walls(t_data *data)
 			build_left_write(data, x);
 		x++;
 	}
-	print_map(data->map);
 	return (1);
 }
+//print_map(data->map);

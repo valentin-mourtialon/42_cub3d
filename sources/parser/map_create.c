@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_create.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: valentin <valentin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sel-maar <sel-maar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 15:03:32 by valentin          #+#    #+#             */
-/*   Updated: 2023/07/14 14:15:28 by sel-maar         ###   ########.fr       */
+/*   Updated: 2023/07/14 14:21:51 by sel-maar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,9 +95,9 @@ static void	fill_spaces(t_data *data)
 		}
 		x++;
 	}
-	print_map(data->map);
 }
 
+//print_map(data->map);
 //printf("\nfull map height = %d\nfull map width = %d\n",
 //data->input_infos.height, data->input_infos.width);
 int	create_map(t_data *data, char **filetab, int x)
